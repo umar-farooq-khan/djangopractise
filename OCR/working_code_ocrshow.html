@@ -1,0 +1,25 @@
+
+<label for="fname">The OCR text:</label><br>
+  <input style="width: 1000px; height:150px " type="text" id="thetext" name="txtt"><br>
+  <script>
+
+var x= document.getElementById("thetext");
+var edit_text= document.getElementById('textb');
+console.log(x);
+fetch('https://api.ocr.space/parse/imageurl?apikey=K88292774788957&url=https://www.rd.com/wp-content/uploads/2020/12/kids-poems10.jpg', {
+  })
+  .then(response => response.json())
+  .then(data => {
+   console.log(data)
+    console.log(data['ParsedResults']);
+     x.value=data['ParsedResults'][0]['ParsedText']
+    edit_text.value=data['ParsedResults'][0]['ParsedText']
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
+</script>
+
+

@@ -1,0 +1,42 @@
+<input type='file' />
+<br><img id="myImg" src="#">
+
+<label for="fname">The OCR text:</label><br>
+  <input style="width: 1000px; height:150px " type="text" id="thetext" name="txtt"><br>
+  <script>
+window.addEventListener('load', function() {
+  document.querySelector('input[type="file"]').addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+          var img = document.querySelector('img');
+          img.onload = () => {
+              URL.revokeObjectURL(img.src);  // no longer needed, free memory
+          }
+
+          img.src = URL.createObjectURL(this.files[0]);
+          console.log('hey')
+          console.log(this.files[0].name)
+          var namee= this.files[0].name
+          fetch(`https://api.ocr.space/parse/file?apikey=K88292774788957&file=${namee}`, {
+    method: 'POST',
+    body: this.files[0]
+  })
+            .then(response => response.json())
+            .then(data => {
+             console.log(data)
+              console.log(data['ParsedResults']);
+               x.value=data['ParsedResults'][0]['ParsedText']
+              edit_text.value=data['ParsedResults'][0]['ParsedText']
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+
+      }
+  });
+});
+
+
+
+</script>
+
+

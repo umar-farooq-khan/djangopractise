@@ -1,0 +1,31 @@
+<input type='file' />
+<br><img id="myImg" src="#">
+
+<label for="fname">The OCR text:</label><br>
+  <input style="width: 1000px; height:150px " type="text" id="thetext" name="txtt"><br>
+  <script>
+document.querySelector('input[type="file"]').addEventListener('change', function(e) {
+    e.preventDefault();
+    var file = this.files[0];
+    var formData = new FormData();
+    formData.append("file", file);
+    console.log(file);
+
+    // Send image to OCR.space API
+    fetch("https://api.ocr.space/parse/image" + new URLSearchParams ({
+     apikey='K88292774788957',
+     file  =file.name
+    }))
+    .then(function(response) {
+        console.log(response)
+        return response.json();
+
+    })
+    .then(function(data) {
+        console.log(data);
+        // Update text area with OCR results
+    });
+});
+        console.log(data);
+
+        </script>

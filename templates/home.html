@@ -1,0 +1,106 @@
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Job Portal </title>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='' rel='stylesheet'>
+    <style>body {
+    background-color: #eee
+}
+
+.card {
+    border: none;
+}
+
+.btn-outline-dark {
+    border-radius: 35px;
+    font-size: 10px;
+    box-shadow: none
+}
+
+.col-md-3 {
+    margin-top: 5px
+}
+    </style>
+    <script type='text/javascript' src=''></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+    <script type='text/javascript'
+            src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+</head>
+<body oncontextmenu='return false' class='snippet-body'>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Jobba SE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNav">
+        <ul  class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Companies</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="jumbotron">
+      <div class="jumbotron text-center">
+<img src="https://firebasestorage.googleapis.com/v0/b/job-portal-c65be.appspot.com/o/files%2Fpexels-ivan-samkov-8117494.jpg?alt=media&token=0fa4fe84-2e1f-40ba-bba3-a803cd4c951c" class="img-fluid" alt="Hero Image">
+  <h1 class="display-4">Welcome to Our Company</h1>
+  <p class="lead">Here at Our Company, we are dedicated to providing top-quality services and solutions for all of your needs. Let us help you reach your goals and succeed!</p>
+  <hr class="my-4">
+</div>
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search jobs">
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+<div class="container mt-5">
+    <div class="d-flex justify-content-between">
+        <h4>Recommended Jobs</h4>
+        <button class="btn btn-sm btn-outline-dark">Apply all</button>
+    </div>
+    <div class="row mt-2 g-1">
+        {% for key, value in data.items %}
+        <div class="col-md-3">
+            <div class="card p-2">
+                <div class="text-right"><small>{{value.Req.type}}</small></div>
+                <div class="text-center mt-2 p-3"><img src="https://img.icons8.com/color/96/000000/google-logo.png"
+                                                       width="60"/> <span class="d-block font-weight-bold">{{value.Req.title}}</span>
+                    <hr>
+                    <span>{{value.Req.company}}</span>
+                    <div class="d-flex flex-row align-items-center justify-content-center"><i
+                            class="fa fa-map-marker"></i> <small class="ml-1">{{value.Req.location}}</small></div>
+                    <div class="d-flex justify-content-between mt-3"><span>{{value.Req.salary}} USD</span>
+                        <form action="/r_jobdetail/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" name="getjobid_btn" value="{{value.Req.id}}¤¤¤{{value.Req.title}}¤¤¤{{value.Req.desc}}"
+                                    class="btn btn-sm btn-outline-dark">Apply
+                            </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+<script type='text/javascript'></script>
+</body>
+</html>

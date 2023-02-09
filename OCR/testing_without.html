@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="row">
+  <div class="col-12">
+    <input type='file' id="image-input"/>
+  </div>
+</div>
+<button id="get-file-button">Get File</button>
+
+<div class="row">
+  <div class="col-12">
+    <label for="thetext">The OCR text:</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <input style="width: 1000px; height:150px " type="text" id="thetext" name="text_">
+  </div>
+</div>
+<script>
+const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+        return setTimeout(resolve, milliseconds)
+    });
+};
+function getimage()
+{
+console.log('called')
+var input = document.getElementById("image-input");
+    var file = input.files[0];
+    if (file) {
+        console.log("Selected file:", file.name);
+       console.log('change')
+    const apiKey = 'K88292774788957';
+    const language = 'eng';
+    const isOverlayRequired = true;
+
+    var formData = new FormData();
+    formData.append("apikey", apiKey);
+    formData.append("language", language);
+    formData.append("isOverlayRequired", isOverlayRequired);
+    formData.append("file", file);
+
+    fetch("https://api.ocr.space/parse/image", {
+      method: "POST",
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+              console.log(data);
+
+        edit_text= document.getElementById('thetext');
+        console.log(edit_text);
+        edit_text.value=data['ParsedResults'][0]['ParsedText']
+        console.log(data['ParsedResults'][0]['ParsedText'])
+}       )
+      .catch(error => console.log(error));
+
+    } else {
+        console.log("No file selected");
+    }
+}
+
+const testSleep = async () => {
+    console.log('Step 1 - Called');
+    await sleep(15000);
+    console.log('Step 2 - Called');
+     getimage()
+
+}
+
+testSleep();
+
+        </script>

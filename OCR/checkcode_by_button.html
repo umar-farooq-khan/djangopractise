@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="row">
+  <div class="col-12">
+    <input type='file' />
+  </div>
+</div>
+<button id="myButton">Click me!</button>
+
+<div class="row">
+  <div class="col-12">
+    <label for="thetext">The OCR text:</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <input style="width: 1000px; height:150px " type="text" id="thetext" name="text_">
+  </div>
+</div>
+<script>
+window.onload = function() {
+    var input = document.getElementById("thetext");
+    console.log(input)
+    input.addEventListener("change", function() {
+        console.log('gey')
+        var file = input.files[0];
+        if (file) {
+            console.log("Selected file:", file.name);
+            var reader = new FileReader();
+            reader.onload = function() {
+                var img = document.createElement("img");
+                img.src = reader.result;
+                document.body.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        } else {
+            console.log("No file selected");
+        }
+    });
+}
+
+
+</script>

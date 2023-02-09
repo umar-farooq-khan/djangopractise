@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="row">
+  <div class="col-12">
+    <input type='file' id="image-input"/>
+  </div>
+</div>
+<button id="get-file-button">Get File</button>
+
+<div class="row">
+  <div class="col-12">
+    <label for="thetext">The OCR text:</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <input style="width: 1000px; height:150px " type="text" id="thetext" name="text_">
+  </div>
+</div>
+<script>
+
+document.getElementById("get-file-button").addEventListener("click", function() {
+    var input = document.getElementById("image-input");
+    var file = input.files[0];
+    if (file) {
+        console.log("Selected file:", file.name);
+    } else {
+        console.log("No file selected");
+    }
+});
+
+console.log('sdgs')
+document.querySelector('input[type="file"]').addEventListener('change', function(e) {
+    console.log('change')
+    const apiKey = 'K88292774788957';
+    const language = 'eng';
+    const isOverlayRequired = true;
+    const file = this.files[0];
+
+    var formData = new FormData();
+    formData.append("apikey", apiKey);
+    formData.append("language", language);
+    formData.append("isOverlayRequired", isOverlayRequired);
+    formData.append("file", file);
+
+    fetch("https://api.ocr.space/parse/image", {
+      method: "POST",
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        edit_text= document.getElementById('thetext');
+        console.log(edit_text);
+        edit_text.value=data['ParsedResults'][0]['ParsedText']
+        console.log(data['ParsedResults'][0]['ParsedText'])
+}       )
+      .catch(error => console.log(error));
+});
+const input = document.querySelector('input');
+
+input.addEventListener('input', updateValue);
+input.addEventListener('load', updateValue);
+input.addEventListener('change', updateValue);
+
+function updateValue(e) {
+  console.log('updatevalue')
+}
+document.querySelector('input[type="file"]').addEventListener('load', function(e) {
+    console.log('change')
+    const apiKey = 'K88292774788957';
+    const language = 'eng';
+    const isOverlayRequired = true;
+    const file = this.files[0];
+
+    var formData = new FormData();
+    formData.append("apikey", apiKey);
+    formData.append("language", language);
+    formData.append("isOverlayRequired", isOverlayRequired);
+    formData.append("file", file);
+
+    fetch("https://api.ocr.space/parse/image", {
+      method: "POST",
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        edit_text= document.getElementById('thetext');
+        console.log(edit_text);
+        edit_text.value=data['ParsedResults'][0]['ParsedText']
+        console.log(data['ParsedResults'][0]['ParsedText'])
+}       )
+      .catch(error => console.log(error));
+});
+        </script>
