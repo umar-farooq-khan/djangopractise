@@ -17,21 +17,56 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script type='text/javascript' src=''></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+    <script type='text/javascript'
+            src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+</head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <script type='text/javascript' src=''></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+    <script type='text/javascript'
+            src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
 
 </head>
 <body>
-<div class="jumbotron text-center">
 
-    <img src="https://firebasestorage.googleapis.com/v0/b/job-portal-c65be.appspot.com/o/files%2Fpexels-ivan-samkov-8117494.jpg?alt=media&token=0fa4fe84-2e1f-40ba-bba3-a803cd4c951c" class="img-fluid" alt="Hero Image">
-    <h1 class="display-4"> {{job_id.title}}</h1>
-    <p class="lead">Here at Our Company, we are dedicated to providing top-quality services and solutions for all of
-        your needs. Let us help you reach your goals and succeed!</p>
-    <hr class="my-4">
+<div class="fluid">
+      {% load static %}
+        <img src="https://www.alten.se/wp-content/uploads/sites/8/2023/01/Alten-High-Res-71-scaled-e1673254156277.jpg" class="img-fluid" alt="Hero Image">
+   <div class="container" style="text-align : center">
+        <h1 class="display-4"> {{job_id.title}}</h1>
+        <p class="lead">Here at Our Company, we are dedicated to providing top-quality services and solutions for all of
+            your needs. Let us help you reach your goals and succeed!</p>
+        <hr class="my-4">
+       </div>
 </div>
-<div class="container">
-    <a href="#">Go back</a>
 
-    {{ job_id.desc | safe }}
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <a href="#">Go back</a>
+      {{ job_id.desc | safe }}
+    </div>
+    <div class="col-6">
+
+    </div>
+  </div>
 </div>
 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
     <form action="/rfilldata/" method="post">
