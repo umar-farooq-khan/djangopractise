@@ -41,11 +41,14 @@
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
     <script type='text/javascript'
             src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+  <link rel="stylesheet" href="static/css/style.css">
 
 </head>
 <body>
+{% include "navbar.html" %}
 
 <div class="fluid">
+
       {% load static %}
         <img src="https://www.alten.se/wp-content/uploads/sites/8/2023/01/Alten-High-Res-71-scaled-e1673254156277.jpg" class="img-fluid" alt="Hero Image">
    <div class="container" style="text-align : center">
@@ -79,6 +82,7 @@
 
 </div>
 {% include "list.html" %}
+{%include 'footer.html' %}
 
 </body>
 </html>

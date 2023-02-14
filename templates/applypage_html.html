@@ -103,6 +103,8 @@ h1.title {
 
     </script>
 </head>
+        {% include "navbar.html" %}
+
 <div class="container">
     <div class="form">
         <h1 class="title">Application for Job #{{job_id.id}}</h1>
@@ -159,15 +161,23 @@ h1.title {
 
 
 
-<script type='text/javascript'>
-    document.addEventListener("contextmenu", function(e){
-  e.preventDefault();
-}, false);
+<!--<script type='text/javascript'>-->
+<!--    document.addEventListener("contextmenu", function(e){-->
+<!--  e.preventDefault();-->
+<!--}, false);-->
 
-document.oncontextmenu = function() {
-    return true;
-};
+<!--document.oncontextmenu = function() {-->
+<!--    return true;-->
+<!--};-->
 
-</script>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md">
+
+    {%include 'footer.html' %}</div>
+    </div>
+
+  </div>
 </body>
 </html>
