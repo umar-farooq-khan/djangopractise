@@ -1,0 +1,425 @@
+<style>
+.mybody{
+background-color : #e6e4df
+}
+  @font-face {
+  font-display:fallback;
+  font-family:"camptonbook";
+  src:url(https://afry.comhttps://afry.com/themes/custom/afpt/components/_global/fonts/campton-book-webfont.woff2) format("woff2"),url(/themes/custom/afpt/components/_global/fonts/campton-book-webfont.woff) format("woff");
+  font-weight:normal;
+  font-style:normal;
+}
+@media all{
+  * {
+    box-sizing:  border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: greyscale;
+  }
+
+  .region-footer {
+    background: #e6e4df;
+    text-transform: uppercase;
+  }
+
+  footer {
+    display: block;
+  }
+
+  .layout-container {
+    max-width: 2560px;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  body {
+    margin:   0;
+    min-height:  -webkit-fill-avaiable;
+    color: #000;
+    font-size: 16px;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
+  }
+
+  body.campton {
+    font-family: "camptonbook",Verdana,Helvetica,Tahoma,Arial,Sans-Serif;
+  }
+
+  html {
+    font-family:   sans-serif;
+    -ms-text-size-adjust:   100%;
+    -webkit-text-size-adjust:   100%;
+    height:  -webkit-fill-available;
+    font-size: 100%;
+  }
+
+  :root {
+:
+    line-sizing:  normal;
+    text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
+  }
+
+  .footer-wrapper  {
+    max-width: 1280px;
+    margin: auto;
+    padding: calc(2rem + 1vw);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+    justify-content: space-between;
+  }
+
+  :before,:after {
+    box-sizing: inherit;
+  }
+
+  .region-footer .footer-wrapper > *  {
+    flex: 1;
+    margin: 1.5rem;
+    min-width: 150px;
+  }
+
+  nav {
+    display: block;
+  }
+
+  .contact-wrapper  {
+    display: flex;
+    flex-direction: column;
+    margin: 1.4rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  p  {
+    margin: 0;
+  }
+
+  h2 {
+    font-size:  calc(1.7rem + 0.5vw);
+    line-height:  1.2;
+    color:   #000;
+    overflow-wrap:  break-word;
+    font-weight: normal;
+  }
+}
+
+@media (min-width: 568px){
+  h2 {
+    font-size: calc(1.8rem + 0.5vw);
+  }
+}
+
+@media (min-width: 1024px){
+  h2 {
+    font-size: 2.875rem;
+  }
+}
+
+@media all{
+  .block-menu h2  {
+    margin-bottom:  1rem;
+    color: #747474;
+    font-size: 0.875rem;
+    margin-top: 0;
+  }
+
+  nav ul  {
+    list-style: none;
+  }
+
+  ul  {
+    margin: 0;
+    padding: 0;
+  }
+
+  .title  {
+    margin-bottom:  1rem;
+    color: #747474;
+    font-size: 0.875rem;
+    margin-top: 0;
+  }
+
+  ul.menu {
+    margin-left: 1em;
+    padding: 0;
+    list-style: none outside;
+    text-align: left;
+  }
+
+  button {
+    color:    inherit;
+    font:    inherit;
+    margin:    0;
+    overflow:   visible;
+    text-transform:  none;
+    -webkit-appearance: button;
+    cursor: pointer;
+  }
+
+  .toggle-cookie-settings  {
+    background: transparent;
+    border: none;
+    line-height: inherit;
+    padding: 0;
+    text-align: left;
+    text-transform: inherit;
+  }
+
+  .toggle-cookie-settings:hover  {
+    outline: 2px dashed #c2c1c1;
+    outline-offset: 3px;
+    text-decoration: underline;
+  }
+
+  .field--name-field-title  {
+    margin-bottom:  1rem;
+    color: #747474;
+    font-size: 0.875rem;
+    margin-top: 0;
+  }
+
+  .field--name-field-links  {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .menu-item {
+    margin: 0;
+    padding-top: 0.2em;
+  }
+
+  ul li  {
+    margin-bottom: 0.4375rem;
+  }
+
+  .menu-item  {
+    padding-top: 0;
+  }
+
+  #block-contact-us .field__item:not(.field--name-field-title)  {
+    margin-bottom: 0.4375rem;
+  }
+
+  a {
+    background-color:  transparent;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:active,a:hover {
+    outline: 0;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-wrapper a  {
+    margin: 0 0 0.25rem 0;
+  }
+
+  .field--name-field-links a  {
+    color: transparent;
+    font-size: 1px;
+  }
+
+  .field--name-field-links a[href*="linkedin"]  {
+    display: inline-block;
+    margin: 0.3125rem 1rem 0 0;
+    position: relative;
+  }
+
+  .field--name-field-links a[href*="youtube"]:before ,a[href*="pinterest"]:before ,.field--name-field-links a[href*="instagram"]:before ,.field--name-field-links a[href*="facebook"]:before ,a[href*="twitter"]:before ,.field--name-field-links a[href*="linkedin"]:before ,a[href*="weibo"]:before ,a[href*="xing"]:before  {
+    height: 40px;
+    left: 50%;
+    position: relative;
+    top: 50%;
+    transform: translate3d(-50%,0,0);
+    width: 40px;
+  }
+
+  .field--name-field-links a[href*="linkedin"]:before  {
+    content: "";
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='Layer_1' x='0' y='0' version='1.1' viewBox='0 0 40 40' xml:space='preserve'%3E%3Cstyle%3E .st0%7Bfill:%23212121%7D %3C/style%3E%3Ctitle%3E LinkedIn icon %3C/title%3E%3Cg id='icon_x2F_bu_x2F_linkedin'%3E%3Cpath id='Shape' d='M23.9 30.4H17v-7.6-6l-.1-1.5h7v.1c.7-.3 1.4-.4 2.3-.4 3.8 0 6.2 2.7 6.2 6.9v8.5h-6.9v-8c0-1.4-.4-1.4-.7-1.4-.1 0-.6 0-.8.6v8.8zM18.4 29h4.1v-6.9c0-.5 0-.8.1-1 .4-1 1.2-1.5 2.1-1.5 1 0 2.1.5 2.1 2.8V29H31v-7.1c0-3.5-1.8-5.5-4.8-5.5-1.1 0-1.9.2-2.6.8l-1.1.8v-1.3h-4.1V29z' class='st0'/%3E%3Cpath id='Rectangle' d='M15.6 30.4h-7V15h7v15.4zM10 29h4.2V16.4H10V29z' class='st0'/%3E%3Cpath id='Path' d='M12.1 13.6c-2 0-3.5-1.5-3.5-3.5s1.5-3.5 3.5-3.5 3.4 1.5 3.5 3.5c0 2-1.5 3.5-3.5 3.5zm0-5.6c-1.2 0-2.1.9-2.1 2.1 0 1.2.9 2.1 2.1 2.1 1.3 0 2.1-.9 2.1-2.1 0-1.3-.9-2.1-2.1-2.1z' class='st0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .field--name-field-links a[href*="instagram"]  {
+    display: inline-block;
+    margin: 0.3125rem 1rem 0 0;
+    position: relative;
+  }
+
+  .field--name-field-links a[href*="instagram"]:before  {
+    content: "";
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='Layer_1' x='0' y='0' version='1.1' viewBox='0 0 40 40' xml:space='preserve'%3E%3Cstyle%3E .st0%7Bfill:%23212121%7D %3C/style%3E%3Ctitle%3E Instagram icon %3C/title%3E%3Cg id='icon_x2F_bu_x2F_instagram'%3E%3Cpath id='Path' d='M28.2 14.1c0 .7-.6 1.3-1.3 1.3s-1.3-.6-1.3-1.3c0-.7.6-1.3 1.3-1.3s1.3.6 1.3 1.3z' class='st0'/%3E%3Cpath id='Rectangle' d='M26 32.7H16c-3.7 0-6.7-3-6.7-6.7V16c0-3.7 3-6.7 6.7-6.7h10c3.7 0 6.7 3 6.7 6.7v10c0 3.7-3 6.7-6.7 6.7zm-10-22c-2.9 0-5.3 2.4-5.3 5.3v10c0 2.9 2.4 5.3 5.3 5.3h10c2.9 0 5.3-2.4 5.3-5.3V16c0-2.9-2.4-5.3-5.3-5.3H16z' class='st0'/%3E%3Cpath id='Oval' d='M21 28.7a6.7 6.7 0 110-13.4 6.7 6.7 0 010 13.4zm0-12c-2.9 0-5.3 2.4-5.3 5.3s2.4 5.3 5.3 5.3 5.3-2.4 5.3-5.3-2.4-5.3-5.3-5.3z' class='st0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .field--name-field-links a[href*="youtube"]  {
+    display: inline-block;
+    margin: 0.3125rem 1rem 0 0;
+    position: relative;
+  }
+
+  .field--name-field-links a[href*="youtube"]:before  {
+    content: "";
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='Layer_1' x='0' y='0' version='1.1' viewBox='0 0 40 40' xml:space='preserve'%3E%3Cstyle%3E .st0%7Bfill:%23212121%7D %3C/style%3E%3Ctitle%3E YouTube icon %3C/title%3E%3Cg id='icon_x2F_bu_x2F_youtube'%3E%3Cg id='iconfinder_1_Youtube_colored_svg_5296521' transform='translate(5 9.2)'%3E%3Cpath id='Path' d='M15 23.5c-.4 0-9.5 0-11.9-.7-1.5-.4-2.7-1.7-3.1-3.3-.7-2.5-.7-7.5-.7-7.7s0-5.2.6-7.7C.3 2.5 1.5 1.2 3 .8 5.5.1 14.6.1 15 .1s9.5 0 11.9.7c1.5.4 2.7 1.7 3.1 3.3.6 2.5.6 7.5.6 7.7s0 5.2-.6 7.7c-.4 1.6-1.6 2.9-3.1 3.3-2.4.7-11.5.7-11.9.7zm0-22c-2.6 0-9.7.1-11.5.6-1.1.3-1.9 1.2-2.2 2.3-.6 2.3-.6 7.3-.6 7.4s0 5.1.6 7.4c.3 1.1 1.1 2 2.2 2.3 1.8.5 8.9.6 11.5.6 2.6 0 9.7-.1 11.5-.6 1.1-.3 1.9-1.2 2.2-2.3.6-2.3.6-7.3.6-7.4s0-5.1-.6-7.4c-.3-1.1-1.1-2-2.2-2.3-1.8-.5-8.9-.6-11.5-.6z' class='st0'/%3E%3Cpath id='Path_1_' d='M11.3 18V6.6l10.1 5.7L11.3 18zm1.4-9v6.6l5.9-3.3L12.7 9z' class='st0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .field--name-field-links a[href*="facebook"]  {
+    display: inline-block;
+    margin: 0.3125rem 1rem 0 0;
+    position: relative;
+  }
+
+  .field--name-field-links a[href*="facebook"]:before  {
+    content: "";
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctitle%3E Facebook icon %3C/title%3E%3Cpath fill='%23212121' d='M22.3 31.7h-5.9v-11h-2.1v-5.3h2.1v-1.8c0-2.5 1.4-5.3 5.2-5.3h4v5.2h-3.1c-.1 0-.2 0-.2.4v1.6h3.5l-.5 5.3h-2.9v10.9zm-4.5-1.4h3.1v-11H24l.2-2.5h-3.3v-3c0-1.2.8-1.8 1.6-1.8h1.7V9.7h-2.6c-3.4 0-3.8 2.7-3.8 3.9v3.2h-2.1v2.5h2.1v11z'/%3E%3C/svg%3E");
+  }
+}
+
+
+
+</style>
+<div class="fluid mybody ">
+
+<div class="mybody footer-wrapper snipcss-xCitr" data-gtm-vis-recent-on-screen-13401926_84="1192" data-gtm-vis-first-on-screen-13401926_84="1192" data-gtm-vis-total-visible-time-13401926_84="100" data-gtm-vis-has-fired-13401926_84="1">
+  <div>
+    <div id="block-followus" class="block block-block-content block-block-content683e3da4-f6ee-4f48-92b4-1fc91ae5ef78">
+      <div class="field field--name-field-title field--type-string field--label-hidden field__item">
+        Follow us
+      </div>
+      <div class="field field--name-field-links field--type-link field--label-hidden field__items">
+        <div class="field__item">
+          <a href="https://www.linkedin.com/company/afry/" target="_blank">
+            LinkedIn
+          </a>
+        </div>
+        <div class="field__item">
+          <a href="https://www.instagram.com/afry.official/" target="_blank">
+            Instagram
+          </a>
+        </div>
+        <div class="field__item">
+          <a href="https://www.youtube.com/channel/UC0QELj2U5xnAsS-36t7osfA" target="_blank">
+            YouTube
+          </a>
+        </div>
+        <div class="field__item">
+          <a href="https://www.facebook.com/afryofficial/" target="_blank">
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+    <p>
+      © 2023 AFRY AB
+    </p>
+  </div>
+  <nav role="navigation" aria-labelledby="block-mainnavigation-2-menu" id="block-mainnavigation-2" class="block block-menu navigation menu--main">
+    <h2 id="block-mainnavigation-2-menu">
+      Shortcuts
+    </h2>
+    <ul class="menu-main--toplevel">
+      <li class="menu-item">
+        <a href="/en/our-offerings" data-drupal-link-system-path="node/1618">
+          Our Offerings
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/en/events" data-drupal-link-system-path="node/2688">
+          Business Events
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/en/projects" title="Client project references and case studies" data-drupal-link-system-path="node/5378">
+          Projects
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/en/insights" data-drupal-link-system-path="node/1456">
+          Insights
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/en/join-us" data-drupal-link-system-path="node/1454">
+          Join Us
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/en/investor-relations" data-drupal-link-system-path="node/1441">
+          Investor Relations
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/en/newsroom" data-drupal-link-system-path="node/1455">
+          Newsroom
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/en/about-us" data-drupal-link-system-path="node/1452">
+          About us
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/en/offices" title="Offices" data-drupal-link-system-path="node/1457">
+          Our Offices
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div>
+    <h2 class="title">
+      Legal
+    </h2>
+    <ul class="menu">
+      <li class="menu-item">
+        <a href="https://afry.com/en/terms-use">
+          Terms of use
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="https://afry.com/en/privacy-notice">
+          Privacy notice
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="https://afry.com/en/cookie-notice" title="How we use cookies">
+          Cookies
+        </a>
+      </li>
+    </ul>
+    <button class="toggle-cookie-settings">
+      Update cookie preferences
+    </button>
+  </div>
+  <div class="contact-wrapper">
+    <div id="block-contact-us" class="block block-block-content block-block-content559d07d2-5ba3-4d71-ab4f-db45a99a6c55">
+      <div class="field field--name-field-title field--type-string field--label-hidden field__item">
+        Contact us
+      </div>
+      <div class="field field--name-field-button field--type-link field--label-hidden field__item">
+        <a href="/en/offices">
+          Offices
+        </a>
+      </div>
+      <div class="field field--name-field-telephone-number field--type-telephone field--label-hidden field__item">
+        <a href="tel:%2B46105050000">
+          +46 10 505 00 00
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+

@@ -1,7 +1,628 @@
 <!doctype html>
 <html>
 <head>
+<style>
+    @font-face {
+  font-family:Raleway;
+  font-style:normal;
+  font-weight:400;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.svg#Raleway) format("svg");
+}
+@font-face {
+  font-family:Raleway;
+  font-style:normal;
+  font-weight:700;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.svg#Raleway) format("svg");
+}
+@font-face {
+  font-family:Raleway;
+  font-style:normal;
+  font-weight:900;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.svg#Raleway) format("svg");
+}
+@font-face {
+  font-family:Lato;
+  font-style:normal;
+  font-weight:300;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.svg#Lato) format("svg");
+}
+@font-face {
+  font-family:Lato;
+  font-style:normal;
+  font-weight:400;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.svg#Lato) format("svg");
+}
+@font-face {
+  font-family:Lato;
+  font-style:normal;
+  font-weight:700;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.svg#Lato) format("svg");
+}
+div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 
+.Nordic Solutions2018_jobboard_list {
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: #fff;
+    padding: 100px 0 30px;
+    z-index: 2;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+}
+
+body.page .post_content > *  {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body.page .post_content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+body {
+    margin:   0;
+    padding:   0;
+    border:   0;
+    font-size:   100%;
+    font:   inherit;
+    vertical-align:   baseline;
+    line-height:  1;
+    font-family: Lato,sans-serif;
+    color: #484848;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.container-txt {
+    padding:  0 30px;
+    margin:  0 auto;
+    max-width: 1170px;
+}
+
+.surheader-content:after ,.viewport:after ,.Nordic Solutions2018_country-country:after,.Nordic Solutions2018_jobboard-detail:after,.container-txt:after,.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.top  {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.links  {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 -15px;
+}
+
+.style-title  {
+    font-family: Raleway,sans-serif;
+    color: #043962;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.size-3  {
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.sub  {
+    letter-spacing: 6px;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.filters  {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.list  {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+}
+
+.btns  {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+h2  {
+    font-size: 17px;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+.size-4  {
+    font-size: 48px;
+    line-height: 60px;
+}
+
+.top .title  {
+    margin: 0 0 20px;
+}
+
+.size-1  {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.top .subtitle  {
+    color: #043962;
+    line-height: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.links .link  {
+    padding: 15px;
+}
+
+.filters .filter-text  {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid #043962;
+    margin-right: 30px;
+}
+
+.filters .filter-profile  {
+    margin-right: 30px;
+    min-width: 270px;
+}
+
+.filters .filter-region  {
+    min-width: 270px;
+}
+
+span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.sub span  {
+    color: #0093d6;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.list a  {
+    background: hsla(0,0%,98%,.9);
+    margin-bottom: 2px;
+    min-height: 90px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 14px;
+    color: #484848;
+    text-decoration: none;
+    padding: 0 30px;
+    opacity: 0;
+}
+
+.list a.fadein  {
+    position: relative;
+    animation: fadein2 .5s linear;
+    animation-fill-mode: both;
+}
+
+.list a.fadein:first-child  {
+    animation-delay: .5s;
+}
+
+.list a:hover  {
+    background:  rgba(4,57,98,.8);
+    color:  #fff;
+}
+
+.list a.fadein:nth-child(2)  {
+    animation-delay: 1s;
+}
+
+.list a.fadein:nth-child(3)  {
+    animation-delay: 1.5s;
+}
+
+.list a.fadein:nth-child(4)  {
+    animation-delay: 2s;
+}
+
+.list a.fadein:nth-child(5)  {
+    animation-delay: 2.5s;
+}
+
+.list a.fadein:nth-child(6)  {
+    animation-delay: 3s;
+}
+
+.list a.fadein:nth-child(7)  {
+    animation-delay: 3.5s;
+}
+
+.list a.fadein:nth-child(8)  {
+    animation-delay: 4s;
+}
+
+.list a.fadein:nth-child(9)  {
+    animation-delay: 4.5s;
+}
+
+.list a.fadein:nth-child(10)  {
+    animation-delay: 5s;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #043962;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 18px;
+    padding: 16px 25px;
+    text-decoration: none;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+}
+
+.button.red {
+    color:  #fff!important;
+    font-weight:  700;
+    background-color: #dd3536;
+}
+
+.btns .button  {
+    margin: 15px;
+    width: 220px;
+    box-sizing: border-box;
+}
+
+.button.lazy:hover {
+    background-size: 120%;
+    opacity: .9;
+}
+
+.button.blue {
+    background-color:  #0093d6;
+    color: #fff!important;
+    font-weight: 700;
+}
+
+.marker-color.after  {
+    margin-left: -58px;
+}
+
+.links a  {
+    position: relative;
+    width: 270px;
+    height: 150px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: Raleway,sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 30px 50px;
+    text-align: center;
+    background-size: 100%;
+    transition: all .3s;
+}
+
+.links a:before ,.links a:before  {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(4,57,98,.5);
+    z-index: 0;
+}
+
+.links a:hover  {
+    background-size: 110%;
+}
+
+.filters .filter-text .icon  {
+    padding: 0 10px 0 20px;
+}
+
+.filters .filter-text input  {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    font-family: Raleway,sans-serif;
+    font-size: 14px;
+    color: #043962;
+    letter-spacing: 2px;
+    background-color: transparent;
+}
+
+.addl-custom {
+    border: 1px solid #043962;
+    position: relative;
+    z-index: 8;
+    height: 50px;
+    overflow: hidden;
+}
+
+.addl-custom:before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #043962;
+    border-top: none;
+    border-left: none;
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) rotate(45deg);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -5px;
+    z-index: 12;
+}
+
+.list a .job-title  {
+    display: block;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    font-weight: 700;
+    font-size: 17px;
+    color: #043962;
+}
+
+.list a:hover .job-title  {
+    color: #fff;
+}
+
+.list a .job-locations  {
+    width: 22.5%;
+    display: block;
+}
+
+.list a .job-date  {
+    width: 145px;
+    display: block;
+}
+
+.marker-color svg  {
+    width: 58px;
+    height: 43px;
+}
+
+.marker-color.after svg  {
+    transform-origin: 100% 0;
+    transform: translate(50%,-50%) rotate(25deg);
+}
+
+.links a span  {
+    position: relative;
+    z-index: 1;
+}
+
+.filters .filter-text .icon svg  {
+    width: 14px;
+    height: 14.7px;
+    fill: #043962;
+}
+
+.addl-custom select  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+}
+
+.addl-custom a  {
+    line-height: 14px;
+    font-family: Raleway,sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: #043962;
+    background-color: #fff;
+    position: relative;
+    white-space: nowrap;
+}
+
+.addl-custom .default  {
+    opacity: .8;
+}
+
+.addl-custom .current  {
+    text-decoration:  none!important;
+    font-family: Lato,sans-serif;
+}
+
+.addl-custom a:hover  {
+    background-color: #043962;
+    color: #fff;
+}
+
+.addl-list {
+    display:  none;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.addl-custom .addl-list  {
+    position: relative;
+    background-color: #fff;
+    max-height: 25vh;
+    overflow: auto;
+}
+
+.list a .job-locations svg  {
+    width: 8px;
+    height: 14px;
+    fill: #0093d6;
+    margin-right: 5px;
+}
+
+.list a .job-date svg  {
+    width: 14px;
+    height: 14px;
+    fill: #0093d6;
+    margin-right: 5px;
+}
+
+.addl-list a  {
+    text-decoration:  none!important;
+    font-family: Lato,sans-serif;
+}
+
+.addl-custom a.selected  {
+    display: none;
+}
+
+
+@keyframes fadein2 {
+  0% {
+      opacity: 0;
+      top: 100px;
+      pointer-events: none;
+      opacity: 0;
+      top: 100px;
+      pointer-events: none;
+  }
+  75% {
+      opacity: .5;
+      top: 0;
+      opacity: 0.5;
+      top: 0px;
+  }
+  100% {
+      opacity: 1;
+      pointer-events: auto;
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+}
+
+</style>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Job Portal </title>
@@ -141,7 +762,7 @@ transform: translate(-50%, -50%);
         <hr class="my-4">
     </div>-->
 
-<form class="container">
+<!--<form class="container">
     <div class="form-group">
         <input type="text" class="form-control" placeholder="Search jobs">
     </div>
@@ -153,8 +774,324 @@ transform: translate(-50%, -50%);
                     value="">Search
             </button>
         </form>
-</form>
+</form>-->
+<!--
+LIST COMPONENT FOR JOB SEARCH
+-->
+<div class="container-txt snipcss-HLW8g">
+  <div class="top">
+    <h2 class="style-title size-4  title">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">
+          WORK HERE
+        </font>
+      </font>
+      <span class="marker-color after">
+        <svg aria-hidden="true">
+          <use xlink:href="#trianglesc">
+          </use>
+        </svg>
+      </span>
+    </h2>
+    <div class="size-1 subtitle">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">
+          With a large dose of curiosity and drive, we develop the technology of the future for world-leading companies in various industries.
+        </font>
+        <font style="vertical-align: inherit;">
+          There are thus many opportunities for you to influence your own personal development.
+        </font>
+        <font style="vertical-align: inherit;">
+          We are continuously looking for new talent.
+        </font>
+        <font style="vertical-align: inherit;">
+          Welcome to submit your application!
+        </font>
+      </font>
+    </div>
+  </div>
+  <div class="links">
+    <div class="link">
+      <a href="https://www.Nordic Solutions.se/om-oss/" class="lazy" style="background-image: url(&quot;https://www.Nordic Solutions.se/wp-content/uploads/sites/8/2022/12/Nordic Solutions-Websize-71.jpg&quot;);">
+        <span>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              Get to know Nordic Solutions
+            </font>
+          </font>
+        </span>
+      </a>
+    </div>
+    <div class="link">
+      <a href="https://www.Nordic Solutions.se/Nordic Solutions-culture/" class="lazy" style="background-image: url(&quot;https://www.Nordic Solutions.se/wp-content/uploads/sites/8/2022/12/Nordic Solutions-Websize-35.jpg&quot;);">
+        <span>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              Nordic Solutions Culture
+            </font>
+          </font>
+        </span>
+      </a>
+    </div>
+    <div class="link">
+      <a href="https://www.Nordic Solutions.se/var-framtid-vart-ansvar/" class="lazy" style="background-image: url(&quot;https://www.Nordic Solutions.se/wp-content/uploads/sites/8/2020/03/Nordic Solutions-commitment.jpg&quot;);">
+        <span>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              Social Engagement
+            </font>
+          </font>
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="sub style-title size-3">
+    <font style="vertical-align: inherit;">
+      <font style="vertical-align: inherit;">
+        Job search
+      </font>
+    </font>
+  </div>
+  <form class="filters" method="GET" action="https://www.Nordic Solutions.se/career/">
+    <div class="filter-text">
+      <span class="icon">
+        <svg aria-hidden="true">
+          <use xlink:href="#search">
+          </use>
+        </svg>
+      </span>
+      <input type="text" name="text" placeholder="LOOK FOR A JOB" value="" aria-label="LOOK FOR A JOB">
+    </div>
+    <div class="filter-profile">
+      <div data-name="category" class="addl-custom">
+        <select name="category" class="custom-select &#45;&#45;initialized" style="visibility: hidden;">
+          <option value="">
+            Alla profiler
+          </option>
+          <option value="130">
+            Process- och anläggning
+          </option>
+          <option value="283">
+            Kemi och läkemedel
+          </option>
+          <option value="112">
+            Nordic Solutions Sverige AB
+          </option>
+          <option value="113">
+            Produktutveckling
+          </option>
+          <option value="114">
+            Elektronik och mjukvaruutveckling
+          </option>
+          <option value="115">
+            System- och applikationsutveckling
+          </option>
+          <option value="116">
+            Utbildning och PLM
+          </option>
+          <option value="117">
+            Beräkning och simulering
+          </option>
+          <option value="118">
+            Examensarbete
+          </option>
+        </select>
+        <a href="#" class="current default">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              All profiles
+            </font>
+          </font>
+        </a>
+        <div class="addl-list">
+          <a href="#" data-value="" class="selected country-site-link">
+            Alla profiler
+          </a>
+          <a href="#" data-value="130" class=" country-site-link">
+            Process- och anläggning
+          </a>
+          <a href="#" data-value="283" class=" country-site-link">
+            Kemi och läkemedel
+          </a>
+          <a href="#" data-value="112" class=" country-site-link">
+            Nordic Solutions Sverige AB
+          </a>
+          <a href="#" data-value="113" class=" country-site-link">
+            Produktutveckling
+          </a>
+          <a href="#" data-value="114" class=" country-site-link">
+            Elektronik och mjukvaruutveckling
+          </a>
+          <a href="#" data-value="115" class=" country-site-link">
+            System- och applikationsutveckling
+          </a>
+          <a href="#" data-value="116" class=" country-site-link">
+            Utbildning och PLM
+          </a>
+          <a href="#" data-value="117" class=" country-site-link">
+            Beräkning och simulering
+          </a>
+          <a href="#" data-value="118" class=" country-site-link">
+            Examensarbete
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="filter-region">
+      <div data-name="location" class="addl-custom">
+        <select name="location" class="custom-select &#45;&#45;initialized" style="visibility: hidden;">
+          <option value="">
+            Alla områden
+          </option>
+          <option value="2711537">
+            Gothenburg
+          </option>
+          <option value="2693678">
+            Lund
+          </option>
+
+        </select>
+        <a href="#" class="current default">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              All areas
+            </font>
+          </font>
+        </a>
+        <div class="addl-list">
+          <a href="#" data-value="" class="selected country-site-link">
+            Alla områden
+          </a>
+          <a href="#" data-value="2711537" class=" country-site-link">
+            Gothenburg
+          </a>
+          <a href="#" data-value="2693678" class=" country-site-link">
+            Lund
+          </a>
+          <a href="#" data-value="2673730" class=" country-site-link">
+            Stockholm
+          </a>
+          <a href="#" data-value="2694762" class=" country-site-link">
+            Linköping
+          </a>
+          <a href="#" data-value="2702979" class=" country-site-link">
+            Jönköping
+          </a>
+          <a href="#" data-value="602150" class=" country-site-link">
+            Umeå
+          </a>
+          <a href="#" data-value="2664454" class=" country-site-link">
+            Västerås
+          </a>
+          <a href="#" data-value="2686657" class=" country-site-link">
+            Örebro
+          </a>
+          <a href="#" data-value="604490" class=" country-site-link">
+            Luleå
+          </a>
+          <a href="#" data-value="2670781" class=" country-site-link">
+            Sundsvall
+          </a>
+          <a href="#" data-value="602913" class=" country-site-link">
+            Skellefteå
+          </a>
+          <a href="#" data-value="2686469" class=" country-site-link">
+            Örnsköldsvik
+          </a>
+          <a href="#" data-value="2677234" class=" country-site-link">
+            Skövde
+          </a>
+          <a href="#" data-value="2663536" class=" country-site-link">
+            Vaxjo
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="sub style-title size-3">
+    <span>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">
+          118
+        </font>
+      </font>
+    </span>
+    <font style="vertical-align: inherit;">
+      <font style="vertical-align: inherit;">
+        vacancies
+      </font>
+    </font>
+  </div>
+
+  <div class="list">
+                     {% for key, value in data.items %}
+
+    <a role="alert" aria-live="polite" class="fadein">
+      <span class="job-title">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">
+           {{value.Req.title}}
+          </font>
+        </font>
+      </span>
+      <span class="job-locations">
+        <svg aria-hidden="true" viewBox="0 0 8 14">
+          <use xlink:href="#icon-location">
+          </use>
+        </svg>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">
+          SEK  {{value.Req.salary}}
+          </font>
+        </font>
+      </span>
+      <span class="job-date">
+        <svg aria-hidden="true">
+          <use xlink:href="#icon-date">
+          </use>
+        </svg>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">
+            {{value.Req.postdate}}
+          </font>
+        </font>
+      </span>
+  {% csrf_token %}
+                       <form action="/r_jobdetail/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" name="getjobid_btn"
+                                    value="{{value.Req.id}}¤¤¤{{value.Req.title}}¤¤¤{{value.Req.desc}}"
+                                    class="btn btn-sm btn-outline-dark">Apply
+                            </button>
+                    </form>
+    </a>
+                            {% endfor %}
+
+  </div>
+
+
+
+  <div class="btns">
+    <a class="button lazy red" href="https://www.Nordic Solutions.se/career/apply/" aria-label="SPONTANEOUS APPLICATION" style="background-image: url(&quot;https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/img/shape-button-red.png&quot;);">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">
+          SPONTANEOUS APPLICATION
+        </font>
+      </font>
+    </a>
+    <a class="button lazy blue" href="https://www.Nordic Solutions.se/career/" aria-label="All services" style="background-image: url(&quot;https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/img/Shape-button-blue-2.png&quot;);">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">
+          All services
+        </font>
+      </font>
+    </a>
+  </div>
 </div>
+
+</div>
+
+<!--code for jobs but in cards, i commented it because I added list of careers
 <div class="container mt-5">
     <div class="d-flex justify-content-between">
         <h4>Recommended Jobs</h4>
@@ -186,11 +1123,11 @@ transform: translate(-50%, -50%);
         {% endfor %}
 
     </div>
-</div>
+</div>-->
 <script type='text/javascript'></script>
 
 <!-- Remove the container if you want to extend the Footer to full width. -->
-{%include 'footer.html' %}
+{%include 'footer AFRY.html' %}
 <!-- End of .container -->
 </body>
 </html>
