@@ -852,16 +852,19 @@ LIST COMPONENT FOR JOB SEARCH
       </font>
     </font>
   </div>
-  <form class="filters" method="GET" action="https://www.Nordic Solutions.se/career/">
-    <div class="filter-text">
+        <form action="" enctype="multipart/form-data" method="POST" class="filters" name="search_comp">
+                {% csrf_token %}
+
+          <div class="filter-text">
       <span class="icon">
         <svg aria-hidden="true">
           <use xlink:href="#search">
           </use>
         </svg>
       </span>
-      <input type="text" name="text" placeholder="LOOK FOR A JOB" value="" aria-label="LOOK FOR A JOB">
+      <input type="text" name="text_search" placeholder="LOOK FOR A JOB" value="" aria-label="LOOK FOR A JOB">
     </div>
+
     <div class="filter-profile">
       <div data-name="category" class="addl-custom">
         <select name="category" class="custom-select &#45;&#45;initialized" style="visibility: hidden;">

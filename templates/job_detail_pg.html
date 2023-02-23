@@ -779,15 +779,17 @@ a {
       </font>
     </font>
   </div>
-  <form class="filters" method="GET" action="https://www.Nordic Solutions.se/career/">
-    <div class="filter-text">
+ <form action="" enctype="multipart/form-data" method="POST" class="filters" name="search_comp">
+                    {% csrf_token %}
+
+   <div class="filter-text">
       <span class="icon">
         <svg aria-hidden="true">
           <use xlink:href="#search">
           </use>
         </svg>
       </span>
-      <input type="text" name="text" placeholder="LOOK FOR A JOB" value="" aria-label="LOOK FOR A JOB">
+      <input type="text" name="text_search" placeholder="LOOK FOR A JOB" value="" aria-label="LOOK FOR A JOB">
     </div>
     <div class="filter-profile">
       <div data-name="category" class="addl-custom">
@@ -952,7 +954,6 @@ a {
 
   <div class="list">
          {% for key, value in job_id.data.items %}
-
     <a href="https://www.Nordic Solutions.se/career/12679-it-projektledare-orebro" role="alert" aria-live="polite" class="fadein">
       <span class="job-title">
         <font style="vertical-align: inherit;">
