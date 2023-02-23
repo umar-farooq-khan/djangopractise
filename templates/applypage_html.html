@@ -1,112 +1,674 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html>
 <head>
-       <style>
-       html,
-body {
-    background: #F4F5F7;
+<style>
+    @font-face {
+  font-family:Raleway;
+  font-style:normal;
+  font-weight:400;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.svg#Raleway) format("svg");
+}
+@font-face {
+  font-family:Raleway;
+  font-style:normal;
+  font-weight:700;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.svg#Raleway) format("svg");
+}
+@font-face {
+  font-family:Raleway;
+  font-style:normal;
+  font-weight:900;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.svg#Raleway) format("svg");
+}
+@font-face {
+  font-family:Lato;
+  font-style:normal;
+  font-weight:300;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.svg#Lato) format("svg");
+}
+@font-face {
+  font-family:Lato;
+  font-style:normal;
+  font-weight:400;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.svg#Lato) format("svg");
+}
+@font-face {
+  font-family:Lato;
+  font-style:normal;
+  font-weight:700;
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.eot);
+  src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.svg#Lato) format("svg");
+}
+div {
     margin: 0;
     padding: 0;
-}
-
-
-body {
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Open sans';
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-}
-
-body>* {
-    margin: 0;
-    padding: 0;
-}
-
-
-h1.title {
-    padding: 15px 0;
-    margin-left: 25px;
-    font-weight: normal;
-    color: rgba(57, 50, 173, 1)
-}
-
-
-
-.myform {
-    background: #F4F5F7;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 12px
-}
-
-.myform label {
-    display: block;
-    color: #A8AAC5;
-    font-weight: bold;
-    font-size: .8rem;
-    margin-bottom: 10px;
-}
-
-.myform input {
     border: 0;
-    outline: 0;
-    height: 30px;
-    background: #FFF;
-    width: 70%;
-    border-radius: 5px;
-    color: #155BDA;
-    font-weight: 700;
-    text-indent: 15px;
-    border: 2px solid transparent;
-    transition: border 250ms;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
-.full-width {
-    grid-column: -1 / 1
+.Nordic Solutions2018_jobboard_list {
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: #fff;
+    padding: 100px 0 30px;
+    z-index: 2;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+}
+
+body.page .post_content > *  {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body.page .post_content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+body {
+    margin:   0;
+    padding:   0;
+    border:   0;
+    font-size:   100%;
+    font:   inherit;
+    vertical-align:   baseline;
+    line-height:  1;
+    font-family: Lato,sans-serif;
+    color: #484848;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.container-txt {
+    padding:  0 30px;
+    margin:  0 auto;
+    max-width: 1170px;
+}
+
+.surheader-content:after ,.viewport:after ,.Nordic Solutions2018_country-country:after,.Nordic Solutions2018_jobboard-detail:after,.container-txt:after,.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.top  {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.links  {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 -15px;
+}
+
+.style-title  {
+    font-family: Raleway,sans-serif;
+    color: #043962;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.size-3  {
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.sub  {
+    letter-spacing: 6px;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.filters  {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.list  {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+}
+
+.btns  {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+h2  {
+    font-size: 17px;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+.size-4  {
+    font-size: 48px;
+    line-height: 60px;
+}
+
+.top .title  {
+    margin: 0 0 20px;
+}
+
+.size-1  {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.top .subtitle  {
+    color: #043962;
+    line-height: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.links .link  {
+    padding: 15px;
+}
+
+.filters .filter-text  {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid #043962;
+    margin-right: 30px;
+}
+
+.filters .filter-profile  {
+    margin-right: 30px;
+    min-width: 270px;
+}
+
+.filters .filter-region  {
+    min-width: 270px;
+}
+
+span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.sub span  {
+    color: #0093d6;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.list a  {
+    background: hsla(0,0%,98%,.9);
+    margin-bottom: 2px;
+    min-height: 90px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 14px;
+    color: #484848;
+    text-decoration: none;
+    padding: 0 30px;
+    opacity: 0;
+}
+
+.list a.fadein  {
+    position: relative;
+    animation: fadein2 .5s linear;
+    animation-fill-mode: both;
+}
+
+.list a.fadein:first-child  {
+    animation-delay: .5s;
+}
+
+.list a:hover  {
+    background:  rgba(4,57,98,.8);
+    color:  #fff;
+}
+
+.list a.fadein:nth-child(2)  {
+    animation-delay: 1s;
+}
+
+.list a.fadein:nth-child(3)  {
+    animation-delay: 1.5s;
+}
+
+.list a.fadein:nth-child(4)  {
+    animation-delay: 2s;
+}
+
+.list a.fadein:nth-child(5)  {
+    animation-delay: 2.5s;
+}
+
+.list a.fadein:nth-child(6)  {
+    animation-delay: 3s;
+}
+
+.list a.fadein:nth-child(7)  {
+    animation-delay: 3.5s;
+}
+
+.list a.fadein:nth-child(8)  {
+    animation-delay: 4s;
+}
+
+.list a.fadein:nth-child(9)  {
+    animation-delay: 4.5s;
+}
+
+.list a.fadein:nth-child(10)  {
+    animation-delay: 5s;
 }
 
 .button {
-    grid-column: -1 / 1;
-    display: flex;
-    justify-content: center;
-}
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #043962;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 18px;
+    padding: 16px 25px;
+    text-decoration: none;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: none;
 
-.button button {
-    border: 0;
-    outline: 0;
-    width: 120px;
-    height: 50px;
-    border-radius: 50px;
-    color: #FFF;
-    font-weight: bold;
-    font-size: .9rem;
     cursor: pointer;
-    background: linear-gradient(356deg, rgba(57, 50, 173, 1) 0%, rgba(87, 50, 173, 1) 100%);
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
 }
 
-.button button:hover {
-    background: rgba(57, 50, 173, 1);
+.button.red {
+    color:  #fff!important;
+    font-weight:  700;
+    background-color: #dd3536;
+}
+
+.btns .button  {
+    margin: 15px;
+    width: 220px;
+    box-sizing: border-box;
+}
+
+.button.lazy:hover {
+    background-size: 120%;
+    opacity: .9;
+}
+
+.button.blue {
+    background-color:  #0093d6;
+    color: #fff!important;
+    font-weight: 700;
+}
+
+.marker-color.after  {
+    margin-left: -58px;
+}
+
+.links a  {
+    position: relative;
+    width: 270px;
+    height: 150px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: Raleway,sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 30px 50px;
+    text-align: center;
+    background-size: 100%;
+    transition: all .3s;
+}
+
+.links a:before ,.links a:before  {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(4,57,98,.5);
+    z-index: 0;
+}
+
+.links a:hover  {
+    background-size: 110%;
+}
+
+.filters .filter-text .icon  {
+    padding: 0 10px 0 20px;
+}
+
+.filters .filter-text input  {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    font-family: Raleway,sans-serif;
+    font-size: 14px;
+    color: #043962;
+    letter-spacing: 2px;
+    background-color: transparent;
+}
+
+.addl-custom {
+    border: 1px solid #043962;
+    position: relative;
+    z-index: 8;
+    height: 50px;
+    overflow: hidden;
+}
+
+.addl-custom:before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #043962;
+    border-top: none;
+    border-left: none;
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) rotate(45deg);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -5px;
+    z-index: 12;
+}
+
+.list a .job-title  {
+    display: block;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    font-weight: 700;
+    font-size: 17px;
+    color: #043962;
+}
+
+.list a:hover .job-title  {
+    color: #fff;
+}
+
+.list a .job-locations  {
+    width: 22.5%;
+    display: block;
+}
+
+.list a .job-date  {
+    width: 145px;
+    display: block;
+}
+
+.marker-color svg  {
+    width: 58px;
+    height: 43px;
+}
+
+.marker-color.after svg  {
+    transform-origin: 100% 0;
+    transform: translate(50%,-50%) rotate(25deg);
+}
+
+.links a span  {
+    position: relative;
+    z-index: 1;
+}
+
+.filters .filter-text .icon svg  {
+    width: 14px;
+    height: 14.7px;
+    fill: #043962;
+}
+
+.addl-custom select  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+}
+
+.addl-custom a  {
+    line-height: 14px;
+    font-family: Raleway,sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: #043962;
+    background-color: #fff;
+    position: relative;
+    white-space: nowrap;
+}
+
+.addl-custom .default  {
+    opacity: .8;
+}
+
+.addl-custom .current  {
+    text-decoration:  none!important;
+    font-family: Lato,sans-serif;
+}
+
+.addl-custom a:hover  {
+    background-color: #043962;
+    color: #fff;
+}
+
+.addl-list {
+    display:  none;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.addl-custom .addl-list  {
+    position: relative;
+    background-color: #fff;
+    max-height: 25vh;
+    overflow: auto;
+}
+
+.list a .job-locations svg  {
+    width: 8px;
+    height: 14px;
+    fill: #0093d6;
+    margin-right: 5px;
+}
+
+.list a .job-date svg  {
+    width: 14px;
+    height: 14px;
+    fill: #0093d6;
+    margin-right: 5px;
+}
+
+.addl-list a  {
+    text-decoration:  none!important;
+    font-family: Lato,sans-serif;
+}
+
+.addl-custom a.selected  {
+    display: none;
 }
 
 
-    </style>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Nordic Solutions SE</title>
-    <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='' rel='stylesheet'>
+@keyframes fadein2 {
+  0% {
+      opacity: 0;
+      top: 100px;
+      pointer-events: none;
+      opacity: 0;
+      top: 100px;
+      pointer-events: none;
+  }
+  75% {
+      opacity: .5;
+      top: 0;
+      opacity: 0.5;
+      top: 0px;
+  }
+  100% {
+      opacity: 1;
+      pointer-events: auto;
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+}
+
+</style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script type='text/javascript' src=''></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+    <script type='text/javascript'
+            src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+</head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/css/style.css">
 
     <script type='text/javascript' src=''></script>
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
     <script type='text/javascript'
-            src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'>
+            src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+  <link rel="stylesheet" href="static/css/style.css">
 
-    </script>
 </head>
-  {% include "navbar.html" %}
+<body>
+{% include "navbar.html" %}
 
+<div class="fluid">
+
+      {% load static %}
+        <img src="/static/imgg.jpg" class="img-fluid" alt="Hero Image">
+
+</div>
+
+  {% include "form.html" %}
+
+<!--
+old code for forms
 <div class="container">
     <div class="form">
         <h1 class="title">Application for Job #{{job_id.id}}</h1>
@@ -160,8 +722,7 @@ h1.title {
         </form>
 </div>
     </div>
-
-
+-->
 
 <!--<script type='text/javascript'>-->
 <!--    document.addEventListener("contextmenu", function(e){-->
@@ -173,7 +734,7 @@ h1.title {
 <!--};-->
 
 
-<div class="container">
+<div class="footer">
     <div class="row">
     <div class="col-md">
 

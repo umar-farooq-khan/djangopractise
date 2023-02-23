@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+    <title>Job Portal </title>
+    <style>
+
+
+.jumbotron h1{
+color: white;
+font-weight : bold;
+font-size : 30px
+align-items: center;
+justify-content: center;
+position: absolute;
+top: 30%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.jumbotron img{
+align-items: center;
+justify-content: center;
+position: absolute;
+top: 30%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.jumbotron img{
+color : white;
+font-size : 50px;
+font-weight: bold;
+align-items: center;
+justify-content: center;
+position: absolute;
+top: 30%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.jumbotron p{
+
+position: absolute;
+top: 35%;
+color : white;
+justify-content: center;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+    body {
+    background-color: #eee
+}
+
+.card {
+    border: none;
+}
+
+.btn-outline-dark {
+    border-radius: 35px;
+    font-size: 10px;
+    box-shadow: none
+}
+
+.col-md-3 {
+    margin-top: 5px
+}
+
+
+
+    </style>
+
+
+
+
+
+    <!-- Style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+  {% include "form.html" %}
+
+<!--
+old code for forms
+<div class="container">
+    <div class="form">
+        <h1 class="title">Application for Job #{{job_id.id}}</h1>
+        <h1 class="title"> {{job_id.title}}</h1>
+
+        <form action="/applied/" enctype="multipart/form-data" method="POST" class="myform" name="apply">
+            {% csrf_token %}
+            <div class="control-from">
+                <label for="firstname">First Name *</label>
+                <input type="text" id="firstname" value="" name="firstname_name">
+            </div>
+
+            <div class="control-from">
+                <label for="lastname">Last Name *</label>
+                <input type="text" id="lastname" value="" name="lastname_name">
+            </div>
+
+            <div class="control-from">
+                <label for="emailaddress">Email Address *</label>
+                <input type="text" id="emailaddress" value="" name="email_name">
+            </div>
+
+            <div class="control-from">
+                <label for="phonenumber">Phone Number</label>
+                <input type="phone" id="phonenumber" value="" name="phonenum_name">
+            </div>
+
+            <div class="full-width">
+                <label for="coverletter">Cover Letter</label>
+                <textarea style="height : 500px" cols="100" id="coverletter" name="coverletter_name"> </textarea>
+            </div>
+
+            <div class="control-from">
+                <label for="experience">Experience (Yrs)</label>
+                <input type="text" id="experience" value="" name="exp_name">
+            </div>
+
+            <div class="control-from">
+                <label for="eu_eligible">Eligible to work in EU </label>
+                <input type="text" id="eu_eligible" value="" name="eu_eligible_name">
+            </div>
+            <div class="control-from">
+                <label for="file">Upload CV (Accepts .doc, .docx, .pdf):</label>
+                <input id="file" type="file" value="" enctype="multipart/form-data" name="file_html">
+            </div>
+
+            <div class="button">
+                <button type="Submit" name="submit_html" value="{{job_id.id}}" id="register">Submit</button>
+            </div>
+
+        </form>
+</div>
+    </div>
+-->
+
+<!--<script type='text/javascript'>-->
+<!--    document.addEventListener("contextmenu", function(e){-->
+<!--  e.preventDefault();-->
+<!--}, false);-->
+
+<!--document.oncontextmenu = function() {-->
+<!--    return true;-->
+<!--};-->
+
+
+<div class="footer">
+    <div class="row">
+    <div class="col-md">
+
+    {%include 'footer AFRY.html' %}</div>
+    </div>
+
+  </div>
+</body>
+</html>
