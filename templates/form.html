@@ -1,6 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const fileInput = document.getElementById('file');
+
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('secret_msg', 'this_is_a_secret_message');
+
+    const csrfToken = getCookie('csrftoken');
+    formData.append('csrfmiddlewaretoken', csrfToken);
+
+    fetch('/rfilldata/', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-CSRFToken': csrfToken
+      }
+    })
+    .then(response => {
+      // Handle the response from your Django function
+    })
+    .catch(error => {
+      // Handle any errors
+    });
+  });
+});
+
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      // Does this cookie string begin with the name we want?
+      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+    </script>
     <meta charset="UTF-8">
     <title>Contact Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -29,66 +74,140 @@
       ::placeholder {
         color: #6c757d;
       }
+
+
+
     </style>
-  </head>
-  <body>
 
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <form action="/applied/" enctype="multipart/form-data" method="POST" class="myform" name="apply">
-        {% csrf_token %}
-        <div class="form-row">
-          <div class="col">
-            <div class="form-group">
-             <label for="firstname">First Name *</label>
-                <input type="text" id="firstname" class="form-control" value="" name="firstname_name">
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-group">
-             <label for="lastname">Last Name *</label>
-                <input type="text" id="lastname" class="form-control" value="" name="lastname_name">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-         <label for="emailaddress">Email Address *</label>
-                <input type="text" class="form-control" id="emailaddress"  value="" name="email_name">
-        </div>
-        <div class="form-group">
-          <label for="phonenumber">Phone Number</label>
-                <input type="phone" class="form-control" id="phonenumber" value="" name="phonenum_name">
-        </div>
 
-          <div class="form-group">
-          <label for="experience">Experience (Yrs)</label>
-                <input type="text" class="form-control" id="experience" value="" name="exp_name">
+</head>
+<body>
+
+<div class="container mt-5" >
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <form action="/applied/" enctype="multipart/form-data" method="POST" class="myform" name="apply">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="firstname">First Name *</label>
+                            <input type="text" id="firstname" class="form-control" value="" name="firstname_name">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="lastname">Last Name *</label>
+                            <input type="text" id="lastname" class="form-control" value="" name="lastname_name">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="emailaddress">Email Address *</label>
+                    <input type="text" class="form-control" id="emailaddress" value="" name="email_name">
+                </div>
+                <div class="form-group">
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="phone" class="form-control" id="phonenumber" value="" name="phonenum_name">
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Experience (Yrs)</label>
+                    <input type="text" class="form-control" id="experience" value="" name="exp_name">
+                </div>
+
+                <div class="form-group">
+                    <label for="eu_eligible">Eligible to work in EU </label>
+                    <input type="text" class="form-control" id="eu_eligible" value="" name="eu_eligible_name">
+                </div>
+                 {% csrf_token %}
+                <div class="form-group">
+                    <label for="file">Upload CV (Accepts .doc, .docx, .pdf):</label>
+                    <br/>
+                    <input id="file" onchange="handleFileSelect()"  type="file" value="" enctype="multipart/form-data" name="file_html">
+                </div>
+
+                <div class="form-group row">
+                    <label for="coverletter" class="col-form-label">Cover Letter</label>
+                    <div class="col-sm-12">
+                        <textarea style="height: 500px" cols="70" id="coverletter" name="coverletter_name"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" class="form-control" value="" name="company_input">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="date">Date *</label>
+                            <input type="text" id="date" class="form-control" value="" name="date_input">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="jd" class="col-form-label">Job Responsibilities*</label>
+                    <div class="col-sm-12">
+                        <textarea style="height: 300px" cols="70" id="jd"  name="jd_input">{{job_id.newvalue}}</textarea>
+                    </div>
+                </div>
+                 <script>
+        // Get the textarea element by its ID
+        var textarea = document.getElementById('jd');
+
+        // Update the textarea value with the sentences variable from the context dictionary
+        textarea.value = "{{ sentences }}";
+    </script>
+
+
+
+
+                <div id="content">
+                    <!-- Your initial HTML content goes here -->
+                </div>
+               <div class=" text-center">
+                    <button class="btn btn-primary"
+                            id="load-more">Add more Rows
+                    </button>
+                </div>
+                <script>
+  var loadMoreButton = document.querySelector('#load-more');
+  var contentDiv = document.querySelector('#content');
+
+  loadMoreButton.addEventListener('click', function() {
+      event.preventDefault(); // prevent form submission
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/load-more/');
+    xhr.onload = function() {
+      contentDiv.insertAdjacentHTML('beforeend', xhr.responseText);
+    };
+    xhr.send();
+  });
+
+
+                </script>
+
+                </br>
+                 </br>
+
+                <div class=" text-center">
+                    <button type="Submit" class="btn btn-primary " name="submit_html" value="{{job_id.id}}"
+                            id="register">Submit
+                    </button>
+                </div>
+
+
+            </form>
         </div>
-
-          <div class="form-group">
-          <label for="eu_eligible">Eligible to work in EU </label>
-                <input type="text" class="form-control" id="eu_eligible" value="" name="eu_eligible_name">
-        </div>
-
-         <div class="form-group">
-          <label for="file">Upload CV (Accepts .doc, .docx, .pdf):</label>
-           <br/>
-              <input id="file" type="file"  value="" enctype="multipart/form-data" name="file_html">
-        </div>
-
-                 <div class="form-group">
-
-        <label for="coverletter">Cover Letter</label>
-                <textarea style="height : 500px" cols="70" id="coverletter" name="coverletter_name"> </textarea>
-            </div>
- <div class=" text-center">
-                <button type="Submit" class="btn btn-primary " name="submit_html" value="{{job_id.id}}" id="register">Submit</button>
-            </div>
-      </form>
     </div>
-  </div>
 </div>
 
-  </body>
+</body>
 </html>

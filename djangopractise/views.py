@@ -1,6 +1,9 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.http import HttpResponse
 import pyrebase
+import ocrspace
+from django.views.decorators.csrf import csrf_protect
+
 from time import sleep
 from django.core.mail import send_mail
 import django.utils.datastructures as imp
@@ -21,6 +24,8 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from firebase_admin import storage
 from collections import OrderedDict
+import spacy
+
 # Initialize the Firebase Storage client
 firebase= pyrebase.initialize_app(config)
 authe = firebase.auth()
@@ -99,13 +104,62 @@ def r_jobdetail(request):
     return render(request, 'job_detail_pg.html',{
         'job_id' : context} )
 def rfilldata(request):
+    print('method')
+    print(request.method)
+    print(request.FILES.get('file'))
+    print(request.FILES.get('file_html'))
+    if request.method == 'POST' and request.FILES.get('file'):
+        print('file is selected now')
+        import requests
+        file = request.FILES.get('file')
+
+        # Replace with your API key
+        api_key = 'K89089545688957'
+        url_api = 'https://api.ocr.space/parse/image'
+        # Set the file path to upload
+        file_path = file
+        print('pat')
+        print(file_path)
+        # Set language parameter if needed
+        language = 'eng'
+        # Set other parameters if needed
+        is_overlay_required = False
+        # Set the HTTP headers for the POST request
+        headers = {'apikey': api_key}
+        # Set the payload for the POST request
+        payload = {'language': language, 'isOverlayRequired': is_overlay_required  }
+        # Upload the file and get the response
+
+        #response = requests.post(url_api, headers=headers, data=payload, files={'image': file_path})
+        # Parse the response JSON
+        response= {}
+        response= {'ParsedResults': [{'TextOverlay': {'Lines': [], 'HasOverlay': False, 'Message': 'Text overlay is not provided as it is not requested'}, 'TextOrientation': '0', 'FileParseExitCode': 1, 'ParsedText': "CONTACT ME AT\r\numar.farooq407@email.com\r\nhttps://www.linkedin.com/in/u\r\nmar•farooq• khan-107494167/\r\n*923365297082\r\n12-12-1997\r\nPROGRAMMING\r\nLANGUAGES\r\nPYTHON\r\nANDROID\r\nJAVA\r\nKOTLIN\r\nJAVASCRIPT/TYPESCRIPT\r\nHTML\r\nCLIENT-SIDE\r\nANDROID DEVELOPMENT\r\nANGULAR/ NODEJS\r\nFLASK\r\nDATABASE\r\nFIREBASE\r\nMICROSOFT SQL SERVER\r\nMYSQL\r\nACHEIVEMENTS\r\nLEVEL 2 SELLER ON FIVERR\r\nLEVEL SELLER ON\r\nUMAR FAROOQ KHAN\r\nSOFTWARE DEVELOPER\r\nPERSONAL PROFILE\r\nA full-stack software developer with holistic knowledge Of Android and Web\r\nDevelopment along with Python. Experienced in A1 and Data Science\r\nTechniques.\r\nWORK EXPERIENCE\r\nAndroid Developer (Remote Location)\r\nLesptitsmonstres I Montpellier, France I Aug 2019- February 2021\r\n• App Development in Native Android Platform with Android SDK/Java.\r\n• Using the Google Firebase (No-SQL database) and XML layout.\r\n• Manual Quality Assurance (QA), Maintainance, and Scaling.\r\nAndroid Developer (Contract, Remote Location)\r\nBothofus I Stockholm, Sweden September 2020\r\n• Figma IJI/UX Mockup Translation into Android screens by XML with\r\nfunctionality.\r\n• Firebase Push Notification and Rest API implementation for server calls.\r\n• Implementation of logo animation with Java/kotlin.\r\nKotlin Developer Intern\r\nE-conceptions I Islamabad, Pakistan I June 2019- July 2019\r\n• Support for basic programming: abstraction, inheritance, exception\r\nhandling, and polymorphism using Kotlin.\r\n• Support for implementation of lottery-checker automation tool.\r\nSocial Media Forensics, Data Science Intern\r\nNational Center for Cyber Security Islamabad I May 2019-July 2019\r\n• Development of Regional Database with Twitter API tweepy using Python.\r\n• Manual Labelling of the dataset into multi-label and multi-classes.\r\n• Implementation of exploration of trend (hashtag) origination on social\r\nmedia using GPS location information present in dataset.\r\nSentiment Analysis on Local Regional Data of Twitter with Machine\r\nLearning ( Bachelor's Thesis )\r\n• A project backed by the National Center for Cyber Security (NCCS), an\r\nagency commissioned by the Government of Pakistan.\r\n• GetOldTweets python API for fetching Twitter data.\r\n• Preprocessing of the dataset using Regex and Pandas Python Library.\r\n• Implementation of SVM and Naive Bayes algorithms in Python with the\r\nSklearn and Machine Learning (ML) algorithms with an accuracy of 97%.\r\n• Front-End on Flask and the Back-End on Python.\r\n", 'ErrorMessage': '', 'ErrorDetails': ''}, {'TextOverlay': {'Lines': [], 'HasOverlay': False, 'Message': 'Text overlay is not provided as it is not requested'}, 'TextOrientation': '0', 'FileParseExitCode': 1, 'ParsedText': "CONTACT ME AT\r\numar.farooq407@gmail.com\r\nhttps:/\\www.linkedin.com/in/u\r\n*923365297082\r\nPROJECTS\r\n• Job Portal Website: Job portal website made from Django web\r\nframework\r\n• Pulsar: A news aggregator website using Angular & Nodejs.\r\nTailored/customized newsfeed using ML and A1 algorithms to show\r\nrelated news from different news sources.\r\n• Career Counseling Platform: A career counseling website made from\r\nAngular & Nodejs where students, job seekers, and one who wants to\r\nswitch their career can seek guidance from top leading career\r\ncounselling coaches.\r\n• Blood Donation App: An android app for Urgent Blood Donation and for\r\nFinding Donors.\r\n• News journal priorities on UN SGD: Extensive work on web Scraping and\r\nDetailed Sentiment Analysis and comparison of priorities of UN SGD\r\ngoals on 3 top American News journals\r\n• Spanish Tweets Sentiment Analysis: Spanish tweets were scraped by\r\nthe Tweepy API of some political parties and then classified and\r\nanalyzed the sentiments.\r\n• What's My Profit: E-commerce Income Calculator: Automation tool that\r\ncalculates various income sources files and converts sales into local\r\ncurrency at an exchange rate\r\nEDUCATIONAL HISTORY\r\nBachelor Of Science in Computer Science (BSCS)\r\nAir University, Islamabad | 2016-2020\r\n• Relevant Subjects: Data Science, Information & Network Security,\r\nAndroid Development, Full Stack Web Development (MEAN), Digital\r\nImage Processing, Human-Machine Interaction (HMI), Software\r\nEngineering, Visual Programming C#, Data Structure & Algorithms, Intro\r\nto A1, Computer Architecture, Operating Systems (Linux Environment),\r\nAssembly Language\r\nPre-Engineering, High School\r\nICB G-6/3 1 Islamabad, Pakistan | 2013-2015\r\nLANGUAGES\r\n• English (Fluent)\r\n• Urdu(Fluent)\r\nEXTRACURRICULAR ACTIVITIES\r\n• Cricket\r\n• Writing Programming Articles (Medium.com\r\n• YouTube Content Creation Cinematogra&y-\r\n• Photography, Travelling\r\n", 'ErrorMessage': '', 'ErrorDetails': ''}], 'OCRExitCode': 1, 'IsErroredOnProcessing': False, 'ProcessingTimeInMilliseconds': '2984', 'SearchablePDFURL': 'Searchable PDF not generated as it was not requested.'}
+
+        #ocr_text = response.json()
+        ocr_text = response
+
+        # Print the response JSON
+        print(ocr_text)
+        data1 = []
+        data1.append(ocr_text['ParsedResults'][0]['ParsedText'])
+        nlp = spacy.load("en_core_web_sm")
+
+        ind = ''.join(data1).split('EXPERIENCE')
+        mylist = ind[1]
+        sentences = mylist
+        print(sentences)
+        context = {'sentences': sentences}
+        return render(request, 'applypage_html.html', context)
+
     if request.method == 'GET':
         print(
-            'refreshed')
+            'refreshed get called')
         id = 'some,id'
         title = 'some,title '
         desc = 'some,desc'
     context = {}
+    received_data_fromhtml= request.POST.get('getjobid_btn', None) # this is where we get the data when a request has been made even from a previous page/html
+
     received_data= request.POST.get('getjobid_btn', None) # this is where we get the data when a request has been made even from a previous page/html
     print('r job detail page ran', received_data)
     try:
@@ -113,6 +167,7 @@ def rfilldata(request):
         title = received_data.split(',')[1]
         context['id'] = id
         context['title'] = title
+
     except AttributeError:
         print('refreshed')
         id = 'Some Id'
@@ -120,11 +175,13 @@ def rfilldata(request):
         desc = 'some desc'
         context['id'] = id
         context['title'] = title
+
     # Context is the data that we need to send to the html while rendering
     return render(request, 'applypage_html.html',{
         'job_id' : context} )
 def applied(request):
-    if request.method == 'POST':
+
+    if request.method == 'POST' :
         print('posttt', request.POST)
         #job_id = context['applybtn']
         a= request.POST['firstname_name']
@@ -136,23 +193,72 @@ def applied(request):
         g= request.POST['eu_eligible_name']
         id = request.POST['submit_html']
         file = request.FILES.get('file_html')
-        print('file', file)
+        # Or if you have a custom API host, API key or desired language, pass those:
+        import requests
+        # Replace with your API key
+        api_key = 'K89089545688957'
+        url_api = 'https://api.ocr.space/parse/image'
+        # Set the file path to upload
+        file_path = file
+        # Set language parameter if needed
+        language = 'eng'
+        # Set other parameters if needed
+        is_overlay_required = False
+        # Set the HTTP headers for the POST request
+        headers = {'apikey': api_key}
+        # Set the payload for the POST request
+        payload = {    'language': language,    'isOverlayRequired': is_overlay_required,
+        }
+        # Upload the file and get the response
+        with open(file_path, 'rb') as f:
+            response = requests.post(url_api, headers=headers, data=payload, files={'image': f})
+        # Parse the response JSON
+        response_json = response.json()
+        # Print the response JSON
+        print(response_json)
+        h=[]
+        k=[]
+        j=[]
+        date_input = request.POST.getlist('date_input')
+        jd_input = request.POST.getlist('jd_input')
+        company_input = request.POST.getlist('company_input')
+
+
+
+        #print('file', file)
         file_path = storage.child('files/' + file.name).put(file)
-        print('filepath',file_path)
+        #print('filepath',file_path)
         #print(storage.child('files').put(file_cv))
         url = storage.child('files/' + file.name).get_url(token=None)
-        print('url', url)
-        datatopush= {'firstname_name': a ,'lastname_name':b ,'email_name':c, 'phonenum_name':d, 'coverletter_name':e, 'exp_name':f, 'eu_eligible_name':g , 'url_cv' : url}
+        #print('url', url)
+        datatopush= {'firstname_name': a ,'lastname_name':b ,'email_name':c, 'phonenum_name':d, 'coverletter_name':e, 'exp_name':f, 'eu_eligible_name':g , 'url_cv' : url, 'job_datelist': date_input, 'companylist': company_input, 'job_desc_list': jd_input}
         db.child('Jobs').child('Job Detail').child(id).child('Applicants').child(c.split('@')[0].replace('.','').replace('_', '')).set(datatopush)
-        print('success called')
+        #print('success called')
         subject = 'Job Applied Successfully'
         message = 'You have successfully applied for the position'
         email_from = 'umar.farooq407@gmail.com'
         recipient_list = [c]
-        send_mail(subject, message, email_from, recipient_list, fail_silently=False)
+        #send_mail(subject, message, email_from, recipient_list, fail_silently=False)
     return render(request, 'apply_success.html')
 
 def success(request):
     print('success called')
-
     return render(request, 'success.html')
+
+def load_more(request):
+    # Your logic to fetch more data and generate HTML goes here
+    context={}
+    print('loadddddd')
+    context['newid'] = 2
+    return render(request, 'load-more.html', {'uniqueid' : context})
+
+@csrf_protect
+def your_django_function(request):
+    from django.views.decorators.csrf import csrf_protect
+    print('file chonse')
+    if request.method == 'POST' and request.FILES.get('file'):
+        file = request.FILES['file']
+        print('file chonse')
+        print(file)
+        return HttpResponse('x', status=200)
+        # Process the file here
