@@ -300,7 +300,8 @@ def applied(request):
         g = request.POST['eu_eligible_name']
         id = request.POST['submit_html']
         file = request.FILES.get('file_html')
-        date_input = request.POST.getlist('date_input')
+        from_date_input = request.POST.getlist('fromdate_input')
+        to_date_input = request.POST.getlist('todate_input')
         jd_input = request.POST.getlist('jd_input')
         company_input = request.POST.getlist('company_input')
         storage.child('files/' + file.name).put(file)
@@ -313,7 +314,7 @@ def applied(request):
 
         datatopush = {'firstname_name': a, 'lastname_name': b, 'email_name': c, 'phonenum_name': d,
                       'coverletter_name': e, 'exp_name': f, 'eu_eligible_name': g, 'url_cv': url,
-                      'job_datelist': date_input, 'companylist': company_input, 'job_desc_list': jd_input}
+                      'job_fromdatelist': from_date_input,'job_todatelist': to_date_input,   'companylist': company_input, 'job_desc_list': jd_input}
         db.child('Jobs').child('Job Detail').child(id).child('Applicants').child(
             c.split('@')[0].replace('.', '').replace('_', '')).set(datatopush)
 
@@ -325,7 +326,7 @@ def applied(request):
         #no need to get data from firebase, I just used session storage in order to pass the data
         #jd_fromdb = db.child('Jobs').child('temp').get().val()
 
-        if any(not x for x in company_input + date_input + jd_input):
+        if any(not x for x in company_input + from_date_input + to_date_input + jd_input):
             print("At least one field is empty.")
             context['job_details'] = jd_data_fromprev
             return render(request, 'apply_success_not_filled.html', context={'data_successpage': context})
@@ -384,24 +385,6 @@ def applied(request):
 
 
 
-def load_more(request):
-    # Your logic to fetch more data and generate HTML goes here
-    context = {}
-    print('loadddddd')
-    context['newid'] = 2
-    return render(request, 'load-more.html', {'uniqueid': context})
-
-
-@csrf_protect
-def your_django_function(request):
-    from django.views.decorators.csrf import csrf_protect
-    print('file chonse')
-    if request.method == 'POST' and request.FILES.get('file'):
-        file = request.FILES['file']
-        print('file chonse')
-        print(file)
-        return HttpResponse('x', status=200)
-        # Process the file here
 
 
 
@@ -427,3 +410,19 @@ def success(request):
 
     return render(request, 'apply_success_already_filled.html')
 
+@csrf_protect
+def your_django_function(request):
+    from django.views.decorators.csrf import csrf_protect
+    print('file chonse')
+    if request.method == 'POST' and request.FILES.get('file'):
+        file = request.FILES['file']
+        print('file chonse')
+        print(file)
+        return HttpResponse('x', status=200)
+        # Process the file here
+def load_more(request):
+    # Your logic to fetch more data and generate HTML goes here
+    context = {}
+    print('loadddddd')
+    context['newid'] = 2
+    return render(request, 'load-more.html', {'uniqueid': context})

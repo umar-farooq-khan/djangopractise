@@ -46,6 +46,7 @@ function getCookie(name) {
   return cookieValue;
 }
 
+
     </script>
     <meta charset="UTF-8">
     <title>Contact Form</title>
@@ -75,6 +76,7 @@ function getCookie(name) {
       ::placeholder {
         color: #6c757d;
       }
+
 
 
 
@@ -145,22 +147,29 @@ function getCookie(name) {
                             <input type="text" id="company" class="form-control" value="" name="company_input">
                         </div>
                     </div>
+                </div>
+
+                <div class="form-row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="date">Date *</label>
-                            <input type="text" id="date" class="form-control" value="{{ dest1.name }}"
-                                   name="date_input">
+                            <label for="fromdate">From Date </label>
+                            <input type="date" id="fromdate" class="form-control"
+                                   name="fromdate_input">
+                        </div>
+                    </div>
+                      <div class="col">
+                        <div class="form-group">
+                            <label for="todate">To Date </label>
+                            <input type="date" id="todate" class="form-control"
+                                   name="todate_input">
                         </div>
                     </div>
                 </div>
 
-
                 <div class="form-group row">
                     <label for="jd" class="col-form-label">Job Responsibilities*</label>
                     <div class="col-sm-12">
-
-                        <textarea style="height: 300px" cols="70" id="jd"   name="jd_input">{{ job_id.jd }}</textarea>
-
+                        <textarea style="height: 300px" cols="70" id="jd" name="jd_input"></textarea>
                     </div>
                 </div>
 
@@ -187,6 +196,7 @@ function getCookie(name) {
     };
     xhr.send();
   });
+
 
 
 
