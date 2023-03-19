@@ -25,8 +25,9 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('r_jobdetail/', views.r_jobdetail, name='job_detail_pg'),
     path('rfilldata/', views.rfilldata, name='applypage_html'),
-    path('success/', views.success, name='success'),
     path('applied/', views.applied, name='apply_success'),
+    path('success/', views.success, name='apply_success_already_filled'),
+
     path('load-more/', views.load_more, name='load-more'),
     path('your_django_function/', views.your_django_function, name='your_django_function'),
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+</head>
+<body>
+    <form action="{% url 'rfilldata' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file"><br><br>
+        <input type="submit" value="Upload">
+    </form>
+
+    <textarea style="height: 300px" cols="70" id="jd" name="jd_input"></textarea>
+
+    <script>
+        // Get the textarea element by its ID
+        var textarea = document.getElementById('jd');
+
+        // Update the textarea value with the sentences variable from the context dictionary
+        textarea.value = "{{ sentences }}";
+    </script>
+</body>
+</html>
