@@ -1,8 +1,11 @@
 import PyPDF2
 import spacy
+import docx
+from docx2pdf import convert
 
 # Load the PDF document and extract text
 pdf_file = open(r"C:\Users\umaRf\OneDrive\Desktop\samplecvs\resume_juanjosecarin.pdf", 'rb')
+
 pdf_reader = PyPDF2.PdfReader(pdf_file)
 text = ""
 for page in pdf_reader.pages:
@@ -25,7 +28,6 @@ for ent in doc.ents:
 
 
 # Print the extracted experience entities
-import docx
 
 # Create a new Word document
 doc = docx.Document()
@@ -39,7 +41,6 @@ doc.add_paragraph(x[1])
 
 # Save the Word document
 doc.save("experience.docx")
-from docx2pdf import convert
 
 # Convert a single file from docx to pdf
 convert("experience.docx", "output.pdf")
