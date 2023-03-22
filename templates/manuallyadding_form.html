@@ -95,19 +95,41 @@ function getCookie(name) {
             <form action="/success/" enctype="multipart/form-data" method="POST" class="myform" name="apply">
                 {% csrf_token %}
 
-                <div class="form-row">
+                  <div class="form-row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="company">Company Name *</label>
+                            <label for="company">Company Name* </label>
                             <input type="text" id="company" class="form-control" value="" name="company_input">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
-                            <label for="date">Date *</label>
-                            <input type="text" id="date" class="form-control" value="{{ dest1.name }}"
-                                   name="date_input">
+                            <label for="company">Location e.g (Madrid, Spain) *</label>
+                            <input type="text" id="location" class="form-control" value="" name="location_input">
                         </div>
+                    </div>
+                </div>
+                    <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="fromdate">From Date* </label>
+                            <input type="date" id="fromdate" class="form-control"
+                                   name="fromdate_input">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="todate">To Date* </label>
+                            <input type="date" id="todate" class="form-control"
+                                   name="todate_input">
+                        </div>
+                    </div>
+                </div>
+                  <div class="form-group row">
+                    <label for="job_title" class="col-form-label">Job Title*</label>
+                    <div class="col-sm-12">
+                        <input type="text" id="job_title" class="form-control"
+                               name="job_title_input">
                     </div>
                 </div>
 
