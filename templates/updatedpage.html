@@ -4,7 +4,7 @@
     <title>My App</title>
 </head>
 <body>
-    <form action="{% url 'rfilldata' %}" method="post" enctype="multipart/form-data">
+    <form action="{% url 'apply_form' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="file"><br><br>
         <input type="submit" value="Upload">

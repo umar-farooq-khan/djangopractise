@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const csrfToken = getCookie('csrftoken');
     formData.append('csrfmiddlewaretoken', csrfToken);
 
-    fetch('/rfilldata/', {
+    fetch('/apply_form/', {
       method: 'POST',
       body: formData,
       headers: {
@@ -50,7 +50,7 @@ function getCookie(name) {
 
     </script>
     <meta charset="UTF-8">
-    <title>Contact Form</title>
+  <title>Nordic Solutions</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
       /* grey color for labels */

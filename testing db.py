@@ -22,4 +22,7 @@ firebase= pyrebase.initialize_app(config)
 authe = firebase.auth()
 db = firebase.database()
 #.order_by_child('title').equal_to('Data Scientist')
-db.child("Jobs").child("Job Detail").order_by_child("Req/title").start_at("Data").end_at( "Data\uf8ff").get().val()
+#db.child("Jobs").child("Job Detail").order_by_child("Req/title").end_at( "Data\uf8ff").get().val()
+x=db.child("Jobs").child("Job Detail").child().order_by_child('id').get().val()
+x
+

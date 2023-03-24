@@ -23,13 +23,14 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('r_jobdetail/', views.r_jobdetail, name='job_detail_pg'),
-    path('rfilldata/', views.rfilldata, name='applypage_html'),
+    path('job_detail/<int:id>', views.job_detail, name='job_detail_pg'),
+    path('apply_form/<int:id>', views.apply_form, name='applypage_html'),
     path('applied/', views.applied, name='apply_success'),
     path('success/', views.success, name='apply_success_already_filled'),
 
     path('load-more/', views.load_more, name='load-more'),
     path('your_django_function/', views.your_django_function, name='your_django_function'),
+    path('contact-us/', views.contact_us, name='contact_us'),
 
 ]
 

@@ -3,7 +3,7 @@
 </br>
     <h2>The Job description 3-5 paragraphs</h2>
    {{job_id.desc}}
-    <form action="/rfilldata/" method="post">
+    <form action="/apply_form/" method="post">
                             {% csrf_token %}
                             <button type="submit" name="getjobid_btn" value="{{job_id.id}},{{job_id.title}}"
                                     class="btn btn-sm btn-outline-dark">Apply
@@ -14,11 +14,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Nordic Solutions</title>
 <style>
+p {
+   color: black;
+}
+
     @font-face {
   font-family:Raleway;
   font-style:normal;
   font-weight:400;
+    color: red;
+
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.eot);
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-Regular.svg#Raleway) format("svg");
 }
@@ -26,6 +33,8 @@
   font-family:Raleway;
   font-style:normal;
   font-weight:700;
+    color: red;
+
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.eot);
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-700.svg#Raleway) format("svg");
 }
@@ -33,12 +42,16 @@
   font-family:Raleway;
   font-style:normal;
   font-weight:900;
+    color: red;
+
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.eot);
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Raleway-900.svg#Raleway) format("svg");
 }
 @font-face {
   font-family:Lato;
   font-style:normal;
+    color: red;
+
   font-weight:300;
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.eot);
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-300.svg#Lato) format("svg");
@@ -47,6 +60,8 @@
   font-family:Lato;
   font-style:normal;
   font-weight:400;
+    color: red;
+
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.eot);
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-Regular.svg#Lato) format("svg");
 }
@@ -54,6 +69,8 @@
   font-family:Lato;
   font-style:normal;
   font-weight:700;
+    color: red;
+
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.eot);
   src:url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.eot?#iefix) format("embedded-opentype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.woff2) format("woff2"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.woff) format("woff"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.ttf) format("truetype"),url(https://www.Nordic Solutions.se/wp-content/themes/Nordic Solutions2018/assets/fonts/Lato-700.svg#Lato) format("svg");
 }
@@ -62,6 +79,7 @@ div {
     padding: 0;
     border: 0;
     font-size: 100%;
+
     font: inherit;
     vertical-align: baseline;
 }
@@ -684,17 +702,17 @@ a {
 
 <div class="container">
   <div class="row">
-    <div class="col-6">
-      <a href="#">Go back</a>
-      {{ job_id.desc | safe }} hey there
+    <div class="col-10">
+      <a href="/">Go back</a>
+      {{ job_id.desc | safe }}
     </div>
-    <div class="col-6">
+    <div class="col-4">
 
     </div>
   </div>
 </div>
 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-    <form action="/rfilldata/" method="post">
+    <form action="/apply_form/{{job_id.id}}" method="post">
         {% csrf_token %}
         <button class="btn btn-primary btn-lg px-4 gap-3" type="submit" name="getjobid_btn"
                 value="{{job_id.id}},{{job_id.title}}"
@@ -789,7 +807,7 @@ a {
           </use>
         </svg>
       </span>
-      <input type="text" name="text_search" placeholder="LOOK FOR A JOB" value="" aria-label="LOOK FOR A JOB">
+      <input type="text" name="text_search_detail_pg" placeholder="LOOK FOR A JOB" value="" aria-label="LOOK FOR A JOB">
     </div>
     <div class="filter-profile">
       <div data-name="category" class="addl-custom">
@@ -953,8 +971,8 @@ a {
   </div>
 
   <div class="list">
-         {% for key, value in job_id.data.items %}
-    <a href="https://www.Nordic Solutions.se/career/12679-it-projektledare-orebro" role="alert" aria-live="polite" class="fadein">
+         {% for key, value in job_id.full_data.items %}
+    <a href="/job_detail/{{value.Req.id}}" role="alert" aria-live="polite" class="fadein">
       <span class="job-title">
         <font style="vertical-align: inherit;">
           <font style="vertical-align: inherit;">
@@ -969,7 +987,7 @@ a {
         </svg>
         <font style="vertical-align: inherit;">
           <font style="vertical-align: inherit;">
-          SEK  {{value.Req.salary}}
+            {{value.Req.City}}
           </font>
         </font>
       </span>
@@ -980,7 +998,7 @@ a {
         </svg>
         <font style="vertical-align: inherit;">
           <font style="vertical-align: inherit;">
-            {{value.Req.postdate}}
+            {{value.Req.deadline}}
           </font>
         </font>
       </span>
@@ -994,6 +1012,7 @@ a {
 
 <br/>
 <br/>
+
 
 {%include 'footer AFRY.html' %}
 
