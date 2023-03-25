@@ -3,7 +3,9 @@ from django.http import HttpResponse
 import pyrebase
 from firebase_admin import storage
 from collections import OrderedDict
-import ocrspace
+#import ocrspace
+import requests
+
 from django.views.decorators.csrf import csrf_protect
 #from time import sleep
 #from django.core.mail import send_mail
@@ -247,7 +249,6 @@ def apply_form(request, id):
     if request.method == 'POST' and request.FILES.get('file'):
         context = {}
         print('file is selected now and id is ', str(request.POST.get('id')))
-        import requests
         file = request.FILES.get('file')
         api_key = 'K89089545688957'
         url_api = 'https://api.ocr.space/parse/image'
