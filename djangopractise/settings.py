@@ -138,7 +138,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://nordicwisegroup.azurewebsites.net']
 #ALLOWED_HOSTS = ['192.168.100.1', 'localhost:8000']
 
 # Static files (CSS, JavaScript, Images)
