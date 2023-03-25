@@ -25,7 +25,7 @@ mimetypes.add_type("text/javascript", ".js", True)
 SECRET_KEY = 'django-insecure-68nlh30iqt1zdwwi6l15-=_m%p*14ehh1n8i1@l(ce#vcts7vm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 
@@ -138,6 +138,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = ['192.168.100.1', 'localhost:8000']
 
 # Static files (CSS, JavaScript, Images)
