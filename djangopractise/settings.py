@@ -25,7 +25,7 @@ mimetypes.add_type("text/javascript", ".js", True)
 SECRET_KEY = 'django-insecure-68nlh30iqt1zdwwi6l15-=_m%p*14ehh1n8i1@l(ce#vcts7vm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 
@@ -50,8 +50,8 @@ EMAIL_HOST_PASSWORD = 'pgaxhkqfufckvsaa'  # the password for the email address y
 MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -140,8 +140,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-ALLOWED_HOSTS = ['https://nordicwisegroup.azurewebsites.net']
-#ALLOWED_HOSTS = ['192.168.100.1', 'localhost:8000']
+#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.100.1', 'localhost', '127.0.0.1:8000']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -153,7 +153,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:63342',
