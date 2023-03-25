@@ -4,17 +4,19 @@
     <script>
 document.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.getElementById('file');
-
+  console.log('DOMContentLoaded');
   fileInput.addEventListener('change', () => {
+    console.log('Change Listener');
     const file = fileInput.files[0];
     const formData = new FormData();
     formData.append('file', file);
     formData.append('secret_msg', 'this_is_a_secret_message');
+    formData.append('id', {{ job_id.id }} );
 
     const csrfToken = getCookie('csrftoken');
     formData.append('csrfmiddlewaretoken', csrfToken);
 
-    fetch('/apply_form/', {
+    fetch('/apply_form/{{ job_id.id }}', {
       method: 'POST',
       body: formData,
       headers: {
@@ -88,7 +90,10 @@ function getCookie(name) {
 
 </head>
 <body>
+First{{ job_id.id }}
+thied{ id }}
 
+Second{{ job_id.Req.id }}
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-lg-6">
@@ -130,7 +135,7 @@ function getCookie(name) {
                 <div class="form-group">
                     <label for="file">Upload CV (Accepts .doc, .docx, .pdf):</label>
                     <br/>
-                    <input id="file" onchange="handleFileSelect()" type="file" value="" enctype="multipart/form-data"
+                    <input id="file"  type="file" value="" enctype="multipart/form-data"
                            name="file_html">
                 </div>
              <div id="loading" style="display:none;">

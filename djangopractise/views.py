@@ -239,11 +239,16 @@ def job_detail(request, id):
         'job_id': context})
 
 def apply_form(request, id):
+    print('apply form func called', request)
     sentences = []
+    context={}
+    context['id'] = id
+    print('id added in context ', str(id))
+    print('id now first time ', str(request.POST.get('id')))
 
     if request.method == 'POST' and request.FILES.get('file'):
         context = {}
-        print('file is selected now')
+        print('file is selected now and id is ', str(request.POST.get('id')))
         import requests
         file = request.FILES.get('file')
         api_key = 'K89089545688957'
@@ -288,13 +293,10 @@ def apply_form(request, id):
 
 
     if request.method == 'GET':
-        print(     'refreshed get called')
-        id = id
-        title = 'some,title '
-        desc = 'some,desc'
-        jd = 'some jd in GET 153 line'
-    context = {}
-    received_data_fromhtml = request.POST.get('getjobid_btn', None)  # this is where we get the data when a request has been made even from a previous page/html
+        print(     'refreshed get called & id is', id )
+        context['id'] = id
+        return render(request, 'applypage_html.html', {
+            'job_id': context})
     received_data = request.POST.get('getjobid_btn',
                                      None)  # this is where we get the data when a request has been made even from a previous page/html
     print('r job detail page ran', received_data)
@@ -309,7 +311,7 @@ def apply_form(request, id):
         print('refreshed')
         title = 'some title'
         desc = 'some desc'
-        context['id'] = id
+        context['id'] = 'id'
         context['title'] = title
         context['jd'] = sentences
         received_data = '1001'
