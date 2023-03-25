@@ -1,19 +1,17 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.http import HttpResponse
 import pyrebase
-import json
 from firebase_admin import storage
 from collections import OrderedDict
-import spacy
 import ocrspace
 from django.views.decorators.csrf import csrf_protect
-from time import sleep
-from django.core.mail import send_mail
+#from time import sleep
+#from django.core.mail import send_mail
 import django.utils.datastructures as imp
-from django.core.files.storage import FileSystemStorage
-from django.core.mail import EmailMessage
-from django.shortcuts import redirect
-from django.urls import reverse
+#from django.core.files.storage import FileSystemStorage
+#from django.core.mail import EmailMessage
+#from django.shortcuts import redirect
+#from django.urls import reverse
 
 config = {
     'apiKey': "AIzaSyArHFLsk0pevFNMMGjVavppb5wltduzggw",
