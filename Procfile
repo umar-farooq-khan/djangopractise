@@ -1,0 +1,1 @@
+web: gunicorn djangopractise-wsgi --log file -
