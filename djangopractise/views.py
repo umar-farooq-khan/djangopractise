@@ -87,6 +87,7 @@ def home(request):
         jobdic = db.child("Jobs").child("Job Detail").order_by_child("Req/title").start_at(a).end_at(
             a + "\uf8ff").get().val()
         # First word capital hoga Db main to agar small liko ge to search nahe karega
+        print('job dic')
         print(jobdic)
 
     if request.method == 'POST' and 'submit_btn' in request.POST and request.POST['submit_btn'] == 'clicked':
