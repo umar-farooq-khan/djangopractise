@@ -1,7 +1,7 @@
 
-import pyrebase
-import  json
-import pandas as pd
+#import pyrebase
+#import  json
+#import pandas as pd
 
 config = {
     'apiKey': "AIzaSyArHFLsk0pevFNMMGjVavppb5wltduzggw",

@@ -1,6 +1,6 @@
 # pip install -U spacy
 # python -m spacy download en_core_web_sm
-import spacy
+#import spacy
 
 # Load English tokenizer, tagger, parser and NER
 nlp = spacy.load("en_core_web_sm")

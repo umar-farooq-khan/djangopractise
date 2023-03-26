@@ -1,5 +1,5 @@
 
-import requests
+#import requests
 
 # Replace with your API key
 api_key = 'K89089545688957'
