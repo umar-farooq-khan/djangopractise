@@ -5,7 +5,6 @@ from firebase_admin import storage
 from collections import OrderedDict
 #import ocrspace
 import requests
-
 from django.views.decorators.csrf import csrf_protect
 #from time import sleep
 #from django.core.mail import send_mail
@@ -143,7 +142,7 @@ def job_detail(request, id):
                            'email_name': 'abubakar_khan_99@hotmail.com', 'eu_eligible_name': 'y', 'exp_name': '2',
                            'firstname_name': 'Hafiz', 'lastname_name': 'Khan', 'phonenum_name': '+46735625456',
                            'url_cv': 'https://firebasestorage.googleapis.com/v0/b/job-portal-c65be.appspot.com/o/files%2FInternational%20Deferral%20Form%20-%20NCIRL.pdf?alt=media'},
-        'umarkhan2840503': {'coverletter_name': ' ghjlk', 'email_name': 'umarkhan2840503@gmail.com',
+        'umarkhggggan2840503': {'coverletter_name': ' ghjlk', 'email_name': 'umarkhan2840503@gmail.com',
                             'eu_eligible_name': '', 'exp_name': '', 'firstname_name': 'Umar', 'lastname_name': 'Khan',
                             'phonenum_name': '+923365297082',
                             'url_cv': 'https://firebasestorage.googleapis.com/v0/b/job-portal-c65be.appspot.com/o/files%2FUmar%20Farooq%20Khan%20CV.pdf?alt=media'}},
