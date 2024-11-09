@@ -1,4 +1,4 @@
-AI Job Portal website aiding recruiters and applicants
+AI Job Portal website aiding recruiters and applicants using Django
 
 Live Demo can be given on demand.
 
